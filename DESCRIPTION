@@ -12,5 +12,7 @@ LazyData: FALSE
 Depends: R (>= 3.5)
 Imports:
     dplyr,
-    salic
+    ggplot2,
+    gridExtra,
+    salic (>= 2.0.2)
 RoxygenNote: 6.1.0

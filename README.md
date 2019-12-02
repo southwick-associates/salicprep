@@ -8,7 +8,7 @@ A Southwick internal package for preparing agency data. Includes template code a
 - Then install salicprep and it's dependencies from the R console:
 
 ``` r
-install.packages(c("tidyverse", "data.table", "devtools"))
+install.packages(c("dplyr", "ggplot2", "gridExtra", "devtools"))
 devtools::install_github("southwick-associates/salic")
 devtools::install_github("southwick-associates/salicprep")
 ```
