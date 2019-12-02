@@ -1,6 +1,6 @@
 # salicprep
 
-A Southwick internal package for preparing agency license data in a standardized way. Includes template code and generic functions for producing 
+A Southwick internal package for preparing agency data. Includes template code and generic functions for producing standardized license data. Salicprep extends the [salic package](https://southwick-associates.github.io/salic/) to provide a more generic workflow that isn't necessarily tied to dashboard production. 
 
 ## Installation
 
@@ -12,7 +12,6 @@ install.packages(c("tidyverse", "data.table", "devtools"))
 devtools::install_github("southwick-associates/salic")
 devtools::install_github("southwick-associates/salicprep")
 ```
-
 
 ## Usage
 

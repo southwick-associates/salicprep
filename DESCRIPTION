@@ -1,9 +1,16 @@
 Package: salicprep
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.5.1)
-License: What license is it under?
+Title: Prepare Agency Data
+Version: 0.1.0
+Authors@R: c(
+    person("Dan", "Kary", , "Rsoftware@SouthwickAssociates.com", role = c("aut", "cre")),
+    person("Southwick Associates", role = c("cph", "fnd"))
+    )
+Description: A generic workflow for standardizing agency license data for further analysis.
+License: Intended for SA internal use only
 Encoding: UTF-8
-LazyData: true
+LazyData: FALSE
+Depends: R (>= 3.5)
+Imports:
+    dplyr,
+    salic
+RoxygenNote: 6.1.0
