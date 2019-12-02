@@ -1,5 +1,7 @@
 # populate template files & folders
 
-setup_project <- function() {
-    
+#' Setup template scripts for preparing agency data
+#' 
+setup_template <- function() {
+    # populate template scripts
 }

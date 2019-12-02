@@ -15,11 +15,12 @@ devtools::install_github("southwick-associates/salicprep")
 
 ## Usage
 
-See the vignette (to be written) for an introduction. A project with template files and folders can be initialized from the R console:
+See the vignette (to be written) for an introduction. 
 
-```r
-# example project on data server
-salicprep::new_project("E:/SA/Projects/project-name")
-```
+### Setup Template Files
 
-TODO: include a screenshot of the file structure in "Analysis"
+You'll want to first create a new project [using Rstudio](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects). Then run the setup functions from the R console:
+
+- if using a [Southwick R installation](https://github.com/southwick-associates/saproj): `saproj::new_project("project-name")`
+- install R packages as described above
+- `salicprep::setup_template()`
