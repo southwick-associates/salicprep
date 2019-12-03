@@ -4,8 +4,13 @@
 \alias{setup_template}
 \title{Setup template scripts for preparing agency data}
 \usage{
-setup_template()
+setup_template(folder = "code/1-prep-license")
+}
+\arguments{
+\item{folder}{location for template scripts}
 }
 \description{
-Setup template scripts for preparing agency data
+The expected use assumes that the user has already setup a project directory
+(e.g., using Rstudio). This function populates a subfolder with template
+scripts.
 }
