@@ -7,7 +7,7 @@ A Southwick internal package for preparing agency data; salicprep includes templ
 To install salicprep and it's dependencies from the R console:
 
 ``` r
-install.packages(c("dplyr", "ggplot2", "gridExtra", "devtools"))
+install.packages(c("dplyr", "ggplot2", "gridExtra", "devtools", "lubridate"))
 devtools::install_github("southwick-associates/salic")
 devtools::install_github("southwick-associates/salicprep")
 ```
@@ -21,6 +21,7 @@ See the vignette (to be written) for an introduction.
 If creating a new project from scratch, I recommend [using Rstudio](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects). Then run the setup functions from the R console:
 
 - if using a [Southwick R installation](https://github.com/southwick-associates/R-setup): `saproj::new_project("project-name")`
+
 - install R packages as described in "Installation" above
 
 ### Setup Template Files
