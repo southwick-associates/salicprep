@@ -16,4 +16,6 @@ Imports:
     gridExtra,
     lubridate,
     salic (>= 2.0.2)
+Remotes:
+    southwick-associates/salic
 RoxygenNote: 6.1.0

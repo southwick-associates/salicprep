@@ -4,12 +4,11 @@ A Southwick internal package for preparing agency data; salicprep includes templ
 
 ## Installation
 
-To install salicprep and it's dependencies from the R console:
+From the R console:
 
 ``` r
-install.packages(c("dplyr", "ggplot2", "gridExtra", "devtools", "lubridate"))
-devtools::install_github("southwick-associates/salic")
-devtools::install_github("southwick-associates/salicprep")
+install.packages("remotes")
+remotes::install_github("southwick-associates/salicprep")
 ```
 
 ## Usage
