@@ -1,5 +1,5 @@
 
-# Data Server Setup & Guidelines
+# Data Server Setup & Rules
 
 Southwick Associates maintains a high-performance server in its office that can be accessed remotely (using a VPN) for license data processing. It supports up to 5 concurrent remote desktop users, and is intended for intensive workloads that use sensitive data.
 
@@ -21,7 +21,7 @@ Access to the server is provided for specific analysts using a VPN connection in
 
 ### VPN
 
-The server can only be accessed using a Southwick VPN (Virtual Private Network), which provides a secure channel between your personal computer and the server. Microsoft Windows has a built-in VPN connection utility. Before making a RD connection, users must establish a VPN connection:
+The server can only be accessed using a Southwick VPN (Virtual Private Network), which provides a secure channel between your personal computer and the server. Microsoft Windows has a built-in VPN connection utility. Before making a Remote Desktop connection, users must establish a VPN connection:
 
 Network Status >> VPN >> Add a VPN connection
 
