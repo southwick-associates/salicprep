@@ -2,7 +2,15 @@
 
 An R package that includes functions for preparing state license data. It also includes documentation for the preparation step of national/regional dashboards, and works in conjunction with  [package salic](https://southwick-associates.github.io/salic/) for this use case.
 
-## Dashboad Documentation
+## Documentation
+
+Written for national/regional dashboards, although potentially relevant for other R-based license projects:
+
+- [Dashboard Analyst Introduction](github_vignettes/dashboard-overview.md)
+- [Workflow Overview (incomplete)](github_vignettes/workflow-overview.md)
+    + [Rstudio Recommended Settings](github_vignettes/rstudio-settings.md)
+- [Data required from states](github_vignettes/data-required.md)
+- [Database Schemas](github_vignettes/data-schema.md)
 
 ## Installation
 
