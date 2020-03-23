@@ -7,6 +7,8 @@ Data used in processing dashboards is highly sensitive, and state license data *
 
 ## Usage Rules
 
+These rules must always be followed:
+
 - Never transfer license data to another location.
 - Lock your personal computer (or terminate the Southwick VPN) when you are away from your machine.
 - Log off from the Server (Start >> log off) at the end of your work day.
@@ -34,22 +36,3 @@ Microsoft Windows has a built-in Remote Desktop (RD) application that can be use
 ![](img/remote-desktop.png)
 
 When the RD window is active, the user's keyboard and mouse function as though they are connected directly to the server. Our RD license allows up to five concurrent connections to the server. This means that more than one (and up to five) people can be connected to the server at the same time without interfering with each other (although they must share the server's computing resources).
-
-## Server File Organization
-
-The dashboard analysis files are separated from data files:
-
-| File Path | Function |
-| --- | ---|
-| E:/SA/Projects/Data-Dashboards/ | Analysis (code, etc.) by state |
-| E:/SA/Data-sensitive/Data-Dashboards/ | License Data with personally-identifiable info |
-| E:/SA/Data-production/Data-Dashboards/ | Anonymized License Data for producing dashboards |
-
-## Server Software
-
-A number of software applications are available on the Data Server in `E:/SA/Program Files/`. These don't (currently) have shortcuts and file associations, so you might need to add those manually by finding the file exe (e.g., right click > open with > browse for program). Notable applications:
-
-- RStudio: An IDE for R. I recommend [some modifications](rstudio-settings.md) to the default user settings.
-- DB Browser for SQLite. Provides an interactive way of exploring the SQLite datbases.
-- Gedit: A text editor
-- Ron's Editor: A spreadsheet-like csv editor, potentially useful for manual operations on license type tables
