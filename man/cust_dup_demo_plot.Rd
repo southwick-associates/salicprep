@@ -13,9 +13,12 @@ cust_dup_demo_plot(df_pct)
 Plot results of cust_dup_demo()
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pct}}, \code{\link{cust_dup_pull}},
-  \code{\link{cust_dup_year}}, \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_year}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}

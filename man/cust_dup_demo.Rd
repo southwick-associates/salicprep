@@ -20,9 +20,12 @@ requires sex, cust_res, and birth_year to be present in the customer tables.
 Returns a data frame with breakouts for each specified demographic.
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pct}}, \code{\link{cust_dup_pull}},
-  \code{\link{cust_dup_year}}, \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_year}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}

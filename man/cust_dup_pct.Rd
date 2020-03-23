@@ -23,10 +23,12 @@ customers once. I consider this to be a more meaningful measure of the
 customer duplication rate.
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_demo}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pull}}, \code{\link{cust_dup_year}},
-  \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_year}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}

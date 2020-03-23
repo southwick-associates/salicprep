@@ -15,10 +15,12 @@ downstream. The output only includes those customers in which a duplicate was
 found, containing all corresponding rows from the raw customer table.
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_demo}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pct}}, \code{\link{cust_dup_year}},
-  \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_year}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}

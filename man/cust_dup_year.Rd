@@ -25,10 +25,12 @@ need to be iterative, so will probably need to rewrite this function to reveal
 such a pattern. This wasn't a priority in Dec 2019.
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_demo}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pct}}, \code{\link{cust_dup_pull}},
-  \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}

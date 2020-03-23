@@ -8,14 +8,24 @@
 \alias{res_id_summary}
 \title{Identify sales residency}
 \usage{
-res_id_type(sale, lic, var = "lic_res",
-  caption = "Identification: by license type")
+res_id_type(
+  sale,
+  lic,
+  var = "lic_res",
+  caption = "Identification: by license type"
+)
 
-res_id_other(sale,
-  caption = "Identification: other sales by the same customer")
+res_id_other(
+  sale,
+  caption = "Identification: other sales by the same customer"
+)
 
-res_id_cust(sale, cust, var = "cust_res",
-  caption = "Identification: by customer address")
+res_id_cust(
+  sale,
+  cust,
+  var = "cust_res",
+  caption = "Identification: by customer address"
+)
 
 res_id_summary(sale, caption = "")
 }
@@ -51,10 +61,12 @@ This is intended to be run as part of the residency identification functions
 }}
 
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_demo}},
-  \code{\link{cust_dup_identify}},
-  \code{\link{cust_dup_pct}}, \code{\link{cust_dup_pull}},
-  \code{\link{cust_dup_year}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_year}()}
 }
 \concept{finalize production data}

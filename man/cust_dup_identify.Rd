@@ -24,9 +24,12 @@ limit the potential matches using a preprocessing step. Might also be overkill
 for our needs here.
 }
 \seealso{
-Other finalize production data: \code{\link{cust_dup_demo_plot}},
-  \code{\link{cust_dup_demo}}, \code{\link{cust_dup_pct}},
-  \code{\link{cust_dup_pull}}, \code{\link{cust_dup_year}},
-  \code{\link{res_id}}
+Other finalize production data: 
+\code{\link{cust_dup_demo_plot}()},
+\code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_pct}()},
+\code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_year}()},
+\code{\link{res_id}}
 }
 \concept{finalize production data}
