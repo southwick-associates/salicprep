@@ -1,6 +1,8 @@
 # salicprep
 
-A Southwick internal package for preparing agency data; salicprep includes template code and functions for standardizing license data. It extends [salic](https://southwick-associates.github.io/salic/) to provide a more generic workflow that isn't tied to dashboard production. 
+An R package that includes functions for preparing state license data. It also includes documentation for the preparation step of national/regional dashboards, and works in conjunction with  [package salic](https://southwick-associates.github.io/salic/) for this use case.
+
+## Dashboad Documentation
 
 ## Installation
 
@@ -8,21 +10,22 @@ From the R console:
 
 ``` r
 install.packages("remotes")
+remotes::install_github("southwick-associates/lictemplate") # template workflow
 remotes::install_github("southwick-associates/salicprep")
 ```
-
+    
 ## Usage
 
-See the vignette (to be written) for an introduction.
+Open an R console (e.g., using RStudio) and populate a directory with template files:
 
-### Setup a new project
+```r
+lictemplate::new_dashboard("state-abbreviation", "time-period")
+```
 
-If creating a new project from scratch, I recommend [using Rstudio](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects). Then run the setup functions from the R console:
+Open the Rstudio project just created and build the project package library with [package renv](https://rstudio.github.io/renv/index.html):
 
-- if using a [Southwick R installation](https://github.com/southwick-associates/R-setup): `saproj::new_project("project-name")`
+```r
+renv::restore()
+```
 
-- install R packages as described in "Installation" above
-
-### Setup Template Files
-
-Run `salicprep::setup_template()` from the R console to populate a set of generic license data processing scripts.
+See [Workflow Overview](github_vignettes/workflow-overview.md) for data processing guidelines.
