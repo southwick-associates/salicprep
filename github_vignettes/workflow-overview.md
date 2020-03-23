@@ -1,9 +1,11 @@
 
 # Workflow Overview
 
-This document outlines the workflow for processing data for dashboards. It is an R-based workflow and utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep)). This analysis is intended to be performed using the Southwick Data Server, which (1) keeps all sensitive data confined to a single location, and (2) ensures a consistent (shared) software environment to facilitate collaboration and reproducibility.
+This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Guidelines](github_vignettes/rstudio-settings.md) for details).
 
-### Analysis Steps
+## Analysis Steps
+
+A suggested data processing sequence is outlined below.
 
 0. [Initialize New State (incomplete)](#initialize-new-state)
 1. [Load Raw date into SQLite](#load-raw-data-into-sqlite)
@@ -12,33 +14,6 @@ This document outlines the workflow for processing data for dashboards. It is an
 4. [Initial Validation](#initial-validation)
 5. [Finalize Production Data](#finalize-production-data)
 6. [Final Validation (incomplete)](#final-validation)
-
-## Data Server Usage
-
-TODO: Give an overview here and brief login instructions.
-
-### Software
-
-A number of software applications are available on the Data Server in `E:/SA/Program Files/`. These don’t (currently) have shortcuts and file associations, so you might need to add those manually by finding the file exe (e.g., right click > open with > browse for program). Notable applications:
-
-- RStudio: An IDE for R. I recommend [some modifications](rstudio-settings.md) to the default user settings.
-- DB Browser for SQLite. Provides an interactive way of exploring the SQLite datbases.
-- Gedit: A text editor
-- Ron's Editor: A spreadsheet-like csv editor, potentially useful for manual operations on license type tables
-
-### File Organization
-
-The dashboard analysis files are separated from data files:
-
-| File Path | Function |
-| --- | ---|
-| E:/SA/Projects/Data-Dashboards/ | Analysis (code, etc.) by state |
-| E:/SA/Data-sensitive/Data-Dashboards/ | License Data with personally-identifiable info |
-| E:/SA/Data-production/Data-Dashboards/ | Anonymized License Data for producing dashboards |
-
-## Analysis Steps
-
-A suggested data processing sequence is outlined below.
 
 ### Initialize new state
 
