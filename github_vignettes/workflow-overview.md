@@ -36,9 +36,7 @@ A suggested data processing sequence is outlined below.
 
 ### 0-Initialize new state
 
-TODO
-
-Template code is yet to be populated in this repository. It will live in "1-prep-license-data". Rather than needing to clone or download the repo, I'll likely write an `lictemplate::new_state(state, period)` to pull the necessary files from the repo into the relevant state-period folder.
+From an R console on the server, run `lictemplate::new_project("state-abbreviation", "period")` to populate template files and folders for dashbaord production. Then open the corresponding ".Rproj" file created and run `renv::restore()` to setup the packages needed for the template workflow.
 
 ### 1-Load Raw data into SQLite
 
@@ -84,8 +82,4 @@ The anonymized production data is created at this stage.
 
 ### 6-Final Validation
 
-This step involves summarizing the data in various ways to gain confidence in the trends it presents, and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). 
-
-TODO
-
-- demographic distributions and trends, etc.
+This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). 
