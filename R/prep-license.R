@@ -20,3 +20,24 @@ date_to_char <- function(df) {
     df[date_cols] <- lapply(df[date_cols], as.character)
     df
 }
+
+
+#' Compare count of lines in raw file to imported data frame
+#' 
+#' Generally speaking the raw file will have one more line (header) than the 
+#' data frame has rows. This function is mostly a wrapper for
+#' \code{\link[salic]{count_lines_textfile}}
+#' 
+#' @param df data frame into which raw_file was loaded
+#' @param raw_file path to raw data file
+#' @family functions for preparing license data
+#' @export
+check_raw_lines <- function(df, raw_file) {
+    raw_count <- salic::count_lines_textfile(raw_file)
+    df_count <- nrow(df)
+    data.frame(
+        name = c("raw_file", "df", "difference"),
+        row_count = c(raw_count, df_count, raw_count - df_count),
+        stringsAsFactors = FALSE
+    )
+}
