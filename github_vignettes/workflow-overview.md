@@ -1,7 +1,7 @@
 
 # Workflow Overview
 
-This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](github_vignettes/rstudio-settings.md) for details).
+This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
 
 ## Server Resources
 
@@ -71,7 +71,7 @@ The license type table from the state will require some manual editing. At the v
 
 This step is intended to catch any obvious data problems early. Most data issues can be revealed by looking at how counts change year-to-year (the customer counts in particular don’t usually change much). Several checks are useful:
 
-- Total customer counts by year, overall and separately for hunters and anglers. Comparing to the [USFWS Historical License Sales]() can be useful for a new state.
+- Total customer counts by year, overall and separately for hunters and anglers. Comparing to the [USFWS Historical License Sales](https://www.fws.gov/wsfrprograms/Subpages/LicenseInfo/LicenseIndex.htm) can be useful for a new state.
 - Standardized data rules can be checked with a function: `salic::data_check()`
 
 ### 5-Finalize Production Data

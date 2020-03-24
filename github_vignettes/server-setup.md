@@ -11,9 +11,13 @@ These rules must always be followed:
 
 - Never transfer license data to another location.
 - Lock your personal computer (or terminate the Southwick VPN) when you are away from your machine.
-- Log off from the Server (Start >> log off) at the end of your work day.
 - Don't install software without permission of the project manager.
-- Be cognizant of how much of the shared resources you are using (particularly RAM) and avoid keeping resource heavy applications open when not in use.
+
+You should also be cognizant of how much of the shared resources you are using (particularly RAM):
+
+- When working with large datasets in R, use a SQLite interface to limit data queries to the rows/columns that you need (i.e., avoid pulling complete datasets into R if possible).
+- Close resource-heavy applications open when not in use.
+- Log off from the Server at the end of your work day (From your Remote Desktop: Start >> log off) .
 
 ## VPN & Remote Desktop Setup
 
