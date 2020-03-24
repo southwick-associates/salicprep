@@ -26,13 +26,13 @@ A number of software applications are available on the Data Server in `E:/SA/Pro
 
 A suggested data processing sequence is outlined below.
 
-0. [Initialize New State (incomplete)](#0-initialize-new-state)
+0. [Initialize New State](#0-initialize-new-state)
 1. [Load Raw date into SQLite](#1-load-raw-data-into-sqlite)
 2. [Standardize Data](#2-standardize-data)
 3. [Prep License Type Categories](#3-prep-license-type-categories)
 4. [Initial Validation](#4-initial-validation)
 5. [Finalize Production Data](#5-finalize-production-data)
-6. [Final Validation (incomplete)](#6-final-validation)
+6. [Final Validation](#6-final-validation)
 
 ### 0-Initialize new state
 
