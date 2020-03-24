@@ -16,7 +16,7 @@ These rules must always be followed:
 You should also be cognizant of how much of the shared resources you are using (particularly RAM):
 
 - When working with large datasets in R, use a SQLite interface to limit data queries to the rows/columns that you need (i.e., avoid pulling complete datasets into R if possible).
-- Close resource-heavy applications open when not in use.
+- Close resource-heavy applications when not in use.
 - Log off from the Server at the end of your work day (From your Remote Desktop: Start >> log off) .
 
 ## VPN & Remote Desktop Setup
