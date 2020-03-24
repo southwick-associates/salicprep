@@ -72,8 +72,7 @@ The sale table corresponds to transactions (i.e., purchases of specific license 
 | lic_id | | | | int | | foreign key |
 | year | calendar year of sale | yyyy | | int | | |
 | month | calendar month of transaction | 1, 2, ..., 12 | 1=Jan, 2=Feb, ..., 12=Dec | int | | |
-| dot | transaction (purchase) date | yyyy-mm-dd | | | char | | 
-| start_date | when license becomes effective | yyyy-mm-dd | | | char | | 
+| res | state residency | 1, 2, NA  | 1=Res, 0=Nonres | int | | |
 | end_date | when license expires | yyyy-mm-dd | | | char | | 
 | raw_sale_id | ID for linking to raw data | | | int | | |
 | sale_period | [period] | | | char | for use when data updates are needed | |
