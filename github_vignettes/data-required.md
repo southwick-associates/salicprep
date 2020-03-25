@@ -1,7 +1,7 @@
 
 # Data Required from States
 
-This document outlines Southwick data needs for the National/Regional dashboard. Each data pull should include all stand-alone license records for the given time period. These records should be sufficient to identify ALL licensed anglers and hunters (i.e., all annual, lifetime, multi-year, short-term, and combination hunting/fishing licenses). 
+This document outlines Southwick data needs for the National/Regional dashboard. Each data pull should include all stand-alone license records for the given time period. These records should be sufficient to identify ALL licensed anglers and hunters (i.e., all annual, lifetime, multi-year, short-term, and combination hunting/fishing licenses). See [Database Schemas](data-schema.md) for details about how these are to be standardized on the Southwick Server.
 
 **Date Range**: Calendar years 2010-2019 (sales from Jan 1, 2010 thru Dec 31, 2019)
 
