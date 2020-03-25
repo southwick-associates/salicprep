@@ -17,7 +17,7 @@
 #' @param sale_year1 First allowed year for sale dates
 #' @family functions to check data format
 #' @export
-data_check_standard <- function (cust, sale, sale_year1 = 2009)  {
+data_check_standard <- function (cust, lic, sale, sale_year1 = 2009)  {
     salic::data_check_table(
         cust, df_name = "cust", primary_key = "cust_id",
         required_vars = c(

@@ -4,10 +4,12 @@
 \alias{data_check_standard}
 \title{Check standard data (cust, sale) formatting rules}
 \usage{
-data_check_standard(cust, sale, sale_year1 = 2009)
+data_check_standard(cust, lic, sale, sale_year1 = 2009)
 }
 \arguments{
 \item{cust}{data frame: customer table (primary key = "cust_id")}
+
+\item{lic}{data frame: license types table (primary key = "lic_id")}
 
 \item{sale}{data frame: transactions table (foreign keys = "lic_id", "cust_id")}
 
