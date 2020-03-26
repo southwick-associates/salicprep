@@ -10,12 +10,15 @@
 #' # plot_demo(cust, c("sex", "birth_year", "cust_res"))
 plot_demo <- function(df, vars) {
     plot_one <- function(df, var) {
-        df %>%
+        x <- df %>%
             count(.data[[var]]) %>%
-            mutate(pct = .data$n / sum(.data$n)) %>%
-            ggplot(aes_string(var, "pct")) +
+            mutate(pct = .data$n / sum(.data$n))
+        ggplot(x, aes_string(var, "pct")) +
             geom_col() +
-            scale_y_continuous(labels = scales::percent)
+            scale_y_continuous(labels = scales::percent) +
+            theme(
+                axis.title.y = element_blank()
+            )
     }
     plots <- vars %>%
         sapply(function(x) plot_one(df, x), simplify = FALSE)
@@ -24,3 +27,33 @@ plot_demo <- function(df, vars) {
         top = "Demographic Distributions"
     )
 } 
+
+#' Make a heatmap of license type customers by year
+#' 
+#' @param df data frame with sale data and license type info
+#' @param types types to include (based on "type" variable)
+#' @param truncate Truncation point for "description" variable. If NULL, no
+#' truncation will be performed.
+#' @family functions to summarize license data
+#' @export
+#' @examples 
+#' # sale <- left_join(sale, lic, by = "lic_id")
+#' # plot_lic_types(sale)
+plot_lic_types <- function(
+    df, types = c("hunt", "fish", "combo"), truncate = 30
+) {
+    x <- df %>%
+        filter(.data$type %in% c("hunt", "fish", "combo")) %>%
+        distinct(.data$cust_id, .data$year, .data$description) %>%
+        count(.data$year, .data$description)
+    if (!is.null(truncate)) {
+        x$description <- substr(x$description, 1, truncate)
+    }
+    ggplot(x, aes_string("year", "description", fill = "n")) + 
+        geom_tile() +
+        theme(
+            legend.position = "none",
+            axis.title.y = element_blank()
+        ) +
+        ggtitle("Customer counts by year for license types")
+}

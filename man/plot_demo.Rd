@@ -17,4 +17,8 @@ Make distribution plot(s) for demographic variable(s)
 \examples{
 # plot_demo(cust, c("sex", "birth_year", "cust_res"))
 }
+\seealso{
+Other functions to summarize license data: 
+\code{\link{plot_lic_types}()}
+}
 \concept{functions to summarize license data}
