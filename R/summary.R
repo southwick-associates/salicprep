@@ -14,17 +14,14 @@
 plot_demo <- function(df, vars, trend = FALSE) {
     plot_one <- function(df, var) {
         if (trend) { 
-            x <- group_by(df, .data$year, .data[[var]]) %>%
-                summarise(n = n())
+            p <- group_by(df, .data$year, .data[[var]]) %>%
+                summarise(n = n()) %>%
+                mutate(pct = .data$n / sum(.data$n)) %>%
+                ggplot(aes_string("year", "pct", fill = var))
         } else { 
-            x <- count(df, .data[[var]])
-        }
-        x <- mutate(x, pct = .data$n / sum(.data$n))
-        
-        if (trend) {
-            p <- ggplot(x, aes_string("year", "pct", fill = var))
-        } else {
-            p <- ggplot(x, aes_string(var, "pct"))
+            p <- count(df, .data[[var]]) %>%
+                mutate(pct = .data$n / sum(.data$n)) %>%
+                ggplot(aes_string(var, "pct"))
         }
         p + geom_col() +
             scale_y_continuous(labels = scales::percent) +
