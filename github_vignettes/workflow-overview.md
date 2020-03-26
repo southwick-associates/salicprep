@@ -1,7 +1,7 @@
 
 # Workflow Overview
 
-This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
+This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate), [workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
 
 ## Server Resources
 
@@ -40,9 +40,9 @@ From an R console on the server, run `lictemplate::new_project("state-abbreviati
 
 ### 1-Load Raw data into SQLite
 
-The purpose is to pull the raw license data into a format that is easily usable in analysis. [SQLite](https://db.rstudio.com/databases/sqlite/) databases are useful because they are easily queriable with R. The raw data should be pulled in mostly as-is, to provide an accurate (and complete) representation of the raw data in a database that is easily queried if necessary. 
+The purpose of this step is to get the raw license data into a format that is easily usable in analysis. [SQLite](https://db.rstudio.com/databases/sqlite/) databases are useful because they are easily queriable with R. The raw data should be pulled in mostly as-is, to provide an accurate (and complete) representation of the raw data in a database.
 
-**Check**: At this stage you should also check that none of the columns (variables) specified in the Data Request are missing from the raw data. 
+**Check**: At this stage you should also check that none of the columns (variables) specified in the [Data Request](data-required.md) are missing from the raw data. 
 
 **Note about row IDs**: Adding a unique row ID ensures a means of joining production data back to raw data in the future.
 
@@ -58,21 +58,24 @@ The purpose is to pull the raw license data into a format that is easily usable 
 
 Saving a standardized intermediate database simplifies downstream validation and final preparation. The [Database Schema](./data-schema.md) provides details about variables to include and how categorical variables should be coded.
 
-**Check:**: This step naturally involves a certain amount of data validation, and recoding summaries for relevant variables (gender, residency, etc.) should be documented for future reference. Of particular interest are values that get stored as NA (missing) in the final table. These may be junk data (e.g., data entry errors) or stand-ins for missing values (e.g., "U" for unknown gender).
+**Check:**: This step naturally involves a certain amount of data validation, and recoding summaries for relevant variables (gender, residency, etc.) should be documented for future reference. Of particular interest are values that get stored as NA (missing) in the standardized tables. These may be junk data (e.g., data entry errors) or stand-ins for missing values (e.g., "U" for unknown gender).
+
+Standardized data rules can be checked with a function: `salicprep::data_check_standard()`
 
 ### 3-Prep License Type Categories
 
-The license type table from the state will require some manual editing. At the very least we will need to create a "type" variable which provides logic for identifying hunters and anglers based on license purchases:
+The license type table from the state may require some manual editing. We will need to create a "type" variable which provides logic for identifying hunters and anglers based on license purchases:
 
-- An angler is anyone who buys a license with `lic$type` "fish" or "combo" in a given year
-- An hunter is anyone who buys a license with `lic$type` "hunt" or "combo" in a given year
+- An angler is anyone who buys a license with `lic$type` "fish" or "combo" in a given year.
+- An hunter is anyone who buys a license with `lic$type` "hunt" or "combo" in a given year.
 
 ### 4-Initial Validation
 
 This step is intended to catch any obvious data problems early. Most data issues can be revealed by looking at how counts change year-to-year (the customer counts in particular don’t usually change much). Several checks are useful:
 
-- Total customer counts by year, overall and separately for hunters and anglers. Comparing to the [USFWS Historical License Sales](https://www.fws.gov/wsfrprograms/Subpages/LicenseInfo/LicenseIndex.htm) can be useful for a new state.
-- Standardized data rules can be checked with a function: `salic::data_check()`
+- Total customer counts by year (overall and separately for hunters and anglers). Comparing to the [USFWS Historical License Sales](https://www.fws.gov/wsfrprograms/Subpages/LicenseInfo/LicenseIndex.htm) can be useful for a new state.
+- Demographic breakouts for customers and separately for hunters/anglers.
+- Gaps in specific license types across years, which might identify missing data issues.
 
 ### 5-Finalize Production Data
 
@@ -82,4 +85,4 @@ The anonymized production data is created at this stage.
 
 ### 6-Final Validation
 
-This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). 
+This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). To some degree it repeats the initial validation, but summaries may be different for production date due to customer deduplication, etc.
