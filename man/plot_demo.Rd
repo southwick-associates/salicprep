@@ -4,18 +4,22 @@
 \alias{plot_demo}
 \title{Make distribution plot(s) for demographic variable(s)}
 \usage{
-plot_demo(df, vars)
+plot_demo(df, vars, trend = FALSE)
 }
 \arguments{
 \item{df}{data frame with demographic variable(s)}
 
 \item{vars}{name of demographic variable(s)}
+
+\item{trend}{If TRUE, use stacked bar plots to trend across years}
 }
 \description{
 Make distribution plot(s) for demographic variable(s)
 }
 \examples{
 # plot_demo(cust, c("sex", "birth_year", "cust_res"))
+# hunt <- left_join(hunt, cust, by = "cust_id")
+# plot_demo(hunt, c("sex", "cust_res"), trend = TRUE)
 }
 \seealso{
 Other functions to summarize license data: 

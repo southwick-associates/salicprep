@@ -4,17 +4,29 @@
 #' 
 #' @param df data frame with demographic variable(s)
 #' @param vars name of demographic variable(s)
+#' @param trend If TRUE, use stacked bar plots to trend across years
 #' @family functions to summarize license data
 #' @export
 #' @examples 
 #' # plot_demo(cust, c("sex", "birth_year", "cust_res"))
-plot_demo <- function(df, vars) {
+#' # hunt <- left_join(hunt, cust, by = "cust_id")
+#' # plot_demo(hunt, c("sex", "cust_res"), trend = TRUE)
+plot_demo <- function(df, vars, trend = FALSE) {
     plot_one <- function(df, var) {
-        x <- df %>%
-            count(.data[[var]]) %>%
-            mutate(pct = .data$n / sum(.data$n))
-        ggplot(x, aes_string(var, "pct")) +
-            geom_col() +
+        if (trend) { 
+            x <- group_by(df, .data$year, .data[[var]]) %>%
+                summarise(n = n())
+        } else { 
+            x <- count(df, .data[[var]])
+        }
+        x <- mutate(x, pct = .data$n / sum(.data$n))
+        
+        if (trend) {
+            p <- ggplot(x, aes_string("year", "pct", fill = var))
+        } else {
+            p <- ggplot(x, aes_string(var, "pct"))
+        }
+        p + geom_col() +
             scale_y_continuous(labels = scales::percent) +
             theme(
                 axis.title.y = element_blank()
@@ -26,7 +38,7 @@ plot_demo <- function(df, vars) {
         grobs = plots, nrow = 2,
         top = "Demographic Distributions"
     )
-} 
+}
 
 #' Count license type customers by year
 #' 
