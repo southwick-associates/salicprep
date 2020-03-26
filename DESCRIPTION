@@ -15,7 +15,8 @@ Imports:
     ggplot2,
     gridExtra,
     lubridate,
-    salic (>= 2.0.2)
+    salic (>= 2.0.2),
+    scales
 Remotes:
     southwick-associates/salic
 RoxygenNote: 7.1.0
