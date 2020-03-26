@@ -4,12 +4,10 @@
 \alias{plot_lic_types}
 \title{Make a heatmap of license type customers by year}
 \usage{
-plot_lic_types(df, types = c("hunt", "fish", "combo"), truncate = 30)
+plot_lic_types(df, truncate = 30)
 }
 \arguments{
-\item{df}{data frame with sale data and license type info}
-
-\item{types}{types to include (based on "type" variable)}
+\item{df}{Count of license types as returned by \code{\link{summary_lic_types}}}
 
 \item{truncate}{Truncation point for "description" variable. If NULL, no
 truncation will be performed.}
@@ -19,10 +17,12 @@ Make a heatmap of license type customers by year
 }
 \examples{
 # sale <- left_join(sale, lic, by = "lic_id")
-# plot_lic_types(sale)
+# df <- summary_lic_types(sale)
+# plot_lic_types(df)
 }
 \seealso{
 Other functions to summarize license data: 
-\code{\link{plot_demo}()}
+\code{\link{plot_demo}()},
+\code{\link{summary_lic_types}()}
 }
 \concept{functions to summarize license data}
