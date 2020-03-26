@@ -1,5 +1,37 @@
 # preparing license data
 
+#' Convert date variables from character to date format
+#' 
+#' A convenience function that also includes a summary of any input values
+#' thate weren't converted to dates (i.e., missing in output).
+#' 
+#' @param df data frame that contains date variable
+#' @param date_var date variable stored as character
+#' @param fun function used to convert from character to date format
+#' @family functions for preparing license data
+#' @export
+#' @examples 
+#' # recode_date(cust, "dob", function(x) lubridate::ymd(str_sub(x, end = 10)))
+recode_date <- function(df, date_var, fun) {
+    if (!is.character(df[[date_var]])) {
+        stop("The date_var must be a character type", call. = FALSE)
+    }
+    df$date_in <- df[[date_var]]
+    df[[date_var]] <- fun(df[[date_var]])
+    
+    # print a check of values that failed to code as date
+    cat("Counts of 'failed to parse' by input date value:\n")
+    if (any(is.na(df[[date_var]]))) {
+        df %>%
+            filter(is.na(.data[[date_var]])) %>% 
+            count(.data$date_in) %>% 
+            arrange(desc(.data$n)) %>%
+            data.frame() %>% 
+            print() 
+    }
+    select(df, -.data$date_in)
+}
+
 #' Convert all date columns in a data frame to character
 #' 
 #' A convenience function to prepare for sqlite, which doesn't translate R dates 
@@ -20,7 +52,6 @@ date_to_char <- function(df) {
     df[date_cols] <- lapply(df[date_cols], as.character)
     df
 }
-
 
 #' Compare count of lines in raw file to imported data frame
 #' 
