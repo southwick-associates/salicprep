@@ -24,6 +24,7 @@ Make distribution plot(s) for demographic variable(s)
 \seealso{
 Other functions to summarize license data: 
 \code{\link{plot_lic_types}()},
+\code{\link{summary_date}()},
 \code{\link{summary_lic_types}()},
 \code{\link{summary_year_dot}()}
 }

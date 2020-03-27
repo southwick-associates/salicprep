@@ -22,6 +22,7 @@ Count license type customers by year
 Other functions to summarize license data: 
 \code{\link{plot_demo}()},
 \code{\link{plot_lic_types}()},
+\code{\link{summary_date}()},
 \code{\link{summary_year_dot}()}
 }
 \concept{functions to summarize license data}

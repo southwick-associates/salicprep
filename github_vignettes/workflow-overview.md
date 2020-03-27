@@ -75,6 +75,7 @@ This step is intended to catch any obvious data problems early. Most data issues
 
 - Total customer counts by year (overall and separately for hunters and anglers). Comparing to the [USFWS Historical License Sales](https://www.fws.gov/wsfrprograms/Subpages/LicenseInfo/LicenseIndex.htm) can be useful for a new state.
 - Demographic breakouts for customers and separately for hunters/anglers.
+- Sale variables, particularly correspondence between transaction date (`sale$dot`) and license year (`sale$year`). For dashboards, we will be using calendar year (i.e., based on transaction date), but the year variable provided by agencies doesn't always line up with calendar year.
 - Gaps in specific license types across years, which might identify missing data issues.
 
 ### 5-Finalize Production Data

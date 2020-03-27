@@ -1,5 +1,7 @@
 # functions to summarize license data
 
+# Demographics ------------------------------------------------------------
+
 #' Make distribution plot(s) for demographic variable(s)
 #' 
 #' @param df data frame with demographic variable(s)
@@ -37,6 +39,8 @@ plot_demo <- function(df, vars, trend = FALSE) {
     )
 }
 
+# Dates -------------------------------------------------------------------
+
 #' Summarize difference between "year" and year(dot) in sales
 #' 
 #' Agency provide year variables don't always correspond to calendar year of
@@ -57,6 +61,45 @@ summary_year_dot <- function(df, lastyr = 2019) {
         tidyr::spread(.data$year, .data$n, fill = 0) %>%
         arrange(desc(.data[[lastyr]]))
 }
+
+#' Summarize date distribution by year
+#' 
+#' @param df data frame with date variable
+#' @param date_var name of date variable
+#' @param yrs years of interest
+#' @param samp_size sample size to use for efficiency
+#' @family functions to summarize license data
+#' @export
+#' @examples 
+#' # summary_date(sale, "dot", 2010:2019)
+summary_date <- function(df, date_var, yrs, samp_size = 10000) {
+    df$year <- lubridate::year(df[[date_var]])
+    
+    # summarize years outside select years
+    outside <- filter(df, .data$year %in% yrs)
+    if (nrow(outside) > 0) {
+        cat("Additional years outside of ", yrs, "are included:\n")
+        outside %>%
+            count(.data$year) %>%
+            arrange(desc(.data$n)) %>%
+            print()
+    }
+    
+    # plot years of interest
+    df %>%
+        filter(.data$year %in% yrs) %>%
+        sample_n(samp_size) %>%
+        ggplot(aes_string(date_var)) +
+        geom_histogram() +
+        facet_wrap(~ .data$year, scales = "free_x") +
+        scale_x_date(date_labels = "%b") +
+        ggtitle(paste(
+            "Distribution of", date_var, 
+            "by year using a sample of", samp_size
+        ))
+}
+
+# License Types -----------------------------------------------------------
 
 #' Count license type customers by year
 #' 
