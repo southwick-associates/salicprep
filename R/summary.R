@@ -62,10 +62,11 @@ summary_year_dot <- function(df, lastyr = 2019) {
             "Absolute difference of sale$year and year(sale$dot) by sale$year.\n",  
             "Small discrepancies (e.g., year_diff == 1) are common.\n"
         )
-        mutate(year_diff = abs(.data$year - lubridate::year(.data$dot))) %>%
-        count(.data$year, .data$year_diff) %>%
-        tidyr::spread(.data$year, .data$n, fill = 0) %>%
-        arrange(desc(.data[[lastyr]]))
+        df %>%
+            mutate(year_diff = abs(.data$year - lubridate::year(.data$dot))) %>%
+            count(.data$year, .data$year_diff) %>%
+            tidyr::spread(.data$year, .data$n, fill = 0) %>%
+            arrange(desc(.data[[lastyr]]))
     }
 }
 
