@@ -81,7 +81,7 @@ summary_date <- function(
     df$year <- lubridate::year(df[[date_var]])
     
     # summarize years outside select years
-    outside <- filter(df, .data$year %in% yrs)
+    outside <- filter(df, !.data$year %in% yrs)
     if (nrow(outside) > 0) {
         cat("Additional years outside of ", yrs, "are included:\n")
         outside %>%
@@ -91,7 +91,7 @@ summary_date <- function(
     }
     
     # plot years of interest
-    df <- filter(.data$year %in% yrs)
+    df <- filter(df, .data$year %in% yrs)
     if (!is.null(samp_size)) {
         df <- sample_n(df, samp_size)
     }
