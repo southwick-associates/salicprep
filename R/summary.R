@@ -75,7 +75,7 @@ summary_year_dot <- function(df, lastyr = 2019) {
 #' @examples 
 #' # summary_date(sale, "dot", 2010:2019)
 summary_date <- function(
-    df, date_var, yrs, samp_size = 10000,
+    df, date_var, yrs, samp_size = 100000,
     facet = function() facet_wrap(~ .data$year, scales = "free_x")
 ) {
     df$year <- lubridate::year(df[[date_var]])

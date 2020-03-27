@@ -8,7 +8,7 @@ summary_date(
   df,
   date_var,
   yrs,
-  samp_size = 10000,
+  samp_size = 1e+05,
   facet = function() facet_wrap(~.data$year, scales = "free_x")
 )
 }
