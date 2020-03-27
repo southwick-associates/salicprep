@@ -75,7 +75,7 @@ This step is intended to catch any obvious data problems early. Most data issues
 
 - Total customer counts by year (overall and separately for hunters and anglers). Comparing to the [USFWS Historical License Sales](https://www.fws.gov/wsfrprograms/Subpages/LicenseInfo/LicenseIndex.htm) can be useful for a new state.
 - Demographic breakouts for customers and separately for hunters/anglers.
-- Sale variables, particularly correspondence between transaction date (`sale$dot`) and license year (`sale$year`). For dashboards, we will be using calendar year (i.e., based on transaction date), but the year variable provided by agencies doesn't always line up with calendar year.
+- Sale date variables, particularly correspondence between transaction date (`sale$dot`) and license year (`sale$year`). For dashboards, we will be using calendar year (i.e., based on transaction date), but the year variable provided by agencies doesn't always line up with calendar year.
 - Gaps in specific license types across years, which might identify missing data issues.
 
 ### 5-Finalize Production Data
@@ -86,4 +86,4 @@ The anonymized production data is created at this stage.
 
 ### 6-Final Validation
 
-This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). To some degree it repeats the initial validation, but summaries may be different for production date due to customer deduplication, etc.
+This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). To some degree it repeats the initial validation, but summaries may look different for production date due to customer deduplication, etc.

@@ -29,7 +29,7 @@ remotes::install_github("southwick-associates/salic")
 data(cust, lic, sale, package = "salic")
 ```
 
-### Standardization Guidelines
+### Guidelines
 
 - Standard names should be used
 - Standard coding should be used for categorical data (sex, residency, dates)
@@ -71,6 +71,7 @@ The sale table corresponds to transactions (i.e., purchases of specific license 
 | cust_id | | | int | | | foreign key |
 | lic_id | | | | int | | foreign key |
 | year | calendar year of sale | yyyy | | int | | |
+| dot | transaction (purchase) date | yyyy-mm-dd | | | char | | 
 | month | calendar month of transaction | 1, 2, ..., 12 | 1=Jan, 2=Feb, ..., 12=Dec | int | | |
 | res | state residency | 1, 2, NA  | 1=Res, 0=Nonres | int | | |
 | raw_sale_id | ID for linking to raw data | | | int | | |
