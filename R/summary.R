@@ -54,12 +54,19 @@ plot_demo <- function(df, vars, trend = FALSE) {
 #' # summary_year_dot(sale)
 summary_year_dot <- function(df, lastyr = 2019) {
     lastyr <- as.character(lastyr)
-    df %>%
-        filter(lubridate::year(.data$dot) != .data$year) %>%
+    df <- filter(df, lubridate::year(.data$dot) != .data$year)
+    if (nrow(df) == 0) {
+        cat("No disagreement between year and year(dot).\n")
+    } else {
+        cat(
+            "Absolute difference of sale$year and year(sale$dot) by sale$year.\n",  
+            "Small discrepancies (e.g., year_diff == 1) are common.\n"
+        )
         mutate(year_diff = abs(.data$year - lubridate::year(.data$dot))) %>%
         count(.data$year, .data$year_diff) %>%
         tidyr::spread(.data$year, .data$n, fill = 0) %>%
         arrange(desc(.data[[lastyr]]))
+    }
 }
 
 #' Summarize date distribution by year
@@ -83,7 +90,7 @@ summary_date <- function(
     # summarize years outside select years
     outside <- filter(df, !.data$year %in% yrs)
     if (nrow(outside) > 0) {
-        cat("Additional years outside of ", yrs, "are included:\n")
+        cat("Additional years outside of", yrs, "are included in data:\n")
         outside %>%
             count(.data$year) %>%
             arrange(desc(.data$n)) %>%
