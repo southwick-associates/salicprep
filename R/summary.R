@@ -37,6 +37,27 @@ plot_demo <- function(df, vars, trend = FALSE) {
     )
 }
 
+#' Summarize difference between "year" and year(dot) in sales
+#' 
+#' Agency provide year variables don't always correspond to calendar year of
+#' sales. The resulting table tabulates the absolute difference by df$year.
+#' 
+#' @param df input sales dataset with "year" and "dot" variables
+#' @param lastyr for descending sort of the output table
+#' @family functions to summarize license data
+#' @export
+#' @examples 
+#' # summary_year_dot(sale)
+summary_year_dot <- function(df, lastyr = 2019) {
+    lastyr <- as.character(lastyr)
+    df %>%
+        filter(lubridate::year(.data$dot) != .data$year) %>%
+        mutate(year_diff = abs(.data$year - lubridate::year(.data$dot))) %>%
+        count(.data$year, .data$year_diff) %>%
+        tidyr::spread(.data$year, .data$n, fill = 0) %>%
+        arrange(desc(.data[[lastyr]]))
+}
+
 #' Count license type customers by year
 #' 
 #' @param df data frame with sale data and license type info

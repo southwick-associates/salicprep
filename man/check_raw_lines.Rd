@@ -22,6 +22,7 @@ data frame has rows. This function is mostly a wrapper for
 \seealso{
 Other functions for preparing license data: 
 \code{\link{date_to_char}()},
+\code{\link{date_truncate}()},
 \code{\link{recode_date}()}
 }
 \concept{functions for preparing license data}

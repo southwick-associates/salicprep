@@ -21,6 +21,7 @@ a tedious thing to do with a larger number of variables.
 \seealso{
 Other functions for preparing license data: 
 \code{\link{check_raw_lines}()},
+\code{\link{date_truncate}()},
 \code{\link{recode_date}()}
 }
 \concept{functions for preparing license data}

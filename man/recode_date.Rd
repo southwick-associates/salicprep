@@ -23,6 +23,7 @@ thate weren't converted to dates (i.e., missing in output).
 \seealso{
 Other functions for preparing license data: 
 \code{\link{check_raw_lines}()},
-\code{\link{date_to_char}()}
+\code{\link{date_to_char}()},
+\code{\link{date_truncate}()}
 }
 \concept{functions for preparing license data}
