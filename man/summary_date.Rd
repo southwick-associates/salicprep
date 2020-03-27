@@ -4,7 +4,13 @@
 \alias{summary_date}
 \title{Summarize date distribution by year}
 \usage{
-summary_date(df, date_var, yrs, samp_size = 10000)
+summary_date(
+  df,
+  date_var,
+  yrs,
+  samp_size = 10000,
+  facet = function() facet_wrap(~.data$year, scales = "free_x")
+)
 }
 \arguments{
 \item{df}{data frame with date variable}
@@ -13,7 +19,10 @@ summary_date(df, date_var, yrs, samp_size = 10000)
 
 \item{yrs}{years of interest}
 
-\item{samp_size}{sample size to use for efficiency}
+\item{samp_size}{sample size to use for efficiency. If NULL, no sample will
+be used.}
+
+\item{facet}{facetting function to apply to the plot}
 }
 \description{
 Summarize date distribution by year

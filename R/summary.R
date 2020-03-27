@@ -67,12 +67,17 @@ summary_year_dot <- function(df, lastyr = 2019) {
 #' @param df data frame with date variable
 #' @param date_var name of date variable
 #' @param yrs years of interest
-#' @param samp_size sample size to use for efficiency
+#' @param samp_size sample size to use for efficiency. If NULL, no sample will
+#' be used.
+#' @param facet facetting function to apply to the plot
 #' @family functions to summarize license data
 #' @export
 #' @examples 
 #' # summary_date(sale, "dot", 2010:2019)
-summary_date <- function(df, date_var, yrs, samp_size = 10000) {
+summary_date <- function(
+    df, date_var, yrs, samp_size = 10000,
+    facet = function() facet_wrap(~ .data$year, scales = "free_x")
+) {
     df$year <- lubridate::year(df[[date_var]])
     
     # summarize years outside select years
@@ -86,17 +91,15 @@ summary_date <- function(df, date_var, yrs, samp_size = 10000) {
     }
     
     # plot years of interest
-    df %>%
-        filter(.data$year %in% yrs) %>%
-        sample_n(samp_size) %>%
-        ggplot(aes_string(date_var)) +
+    df <- filter(.data$year %in% yrs)
+    if (!is.null(samp_size)) {
+        df <- sample_n(df, samp_size)
+    }
+    ggplot(df, aes_string(date_var)) +
         geom_histogram() +
-        facet_wrap(~ .data$year, scales = "free_x") +
         scale_x_date(date_labels = "%b") +
-        ggtitle(paste(
-            "Distribution of", date_var, 
-            "by year using a sample of", samp_size
-        ))
+        ggtitle(paste("Distribution of", date_var, "by year")) +
+        facet()
 }
 
 # License Types -----------------------------------------------------------
