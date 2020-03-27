@@ -16,6 +16,9 @@ Generally speaking the raw file will have one more line (header) than the
 data frame has rows. This function is mostly a wrapper for
 \code{\link[salic]{count_lines_textfile}}
 }
+\examples{
+# check_raw_lines(cust, "file/path/to/raw/cust/text/file")
+}
 \seealso{
 Other functions for preparing license data: 
 \code{\link{date_to_char}()},

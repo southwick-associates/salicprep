@@ -42,6 +42,8 @@ recode_date <- function(df, date_var, fun) {
 #' @param df input data frame
 #' @family functions for preparing license data
 #' @export
+#' @examples 
+#' # sale <- date_to_char(sale)
 date_to_char <- function(df) {
     is_date_col <- sapply(names(df), function(x) {
         lubridate::is.POSIXt(df[[x]]) || lubridate::is.POSIXlt(df[[x]]) || 
@@ -63,6 +65,8 @@ date_to_char <- function(df) {
 #' @param raw_file path to raw data file
 #' @family functions for preparing license data
 #' @export
+#' @examples 
+#' # check_raw_lines(cust, "file/path/to/raw/cust/text/file")
 check_raw_lines <- function(df, raw_file) {
     raw_count <- salic::count_lines_textfile(raw_file)
     df_count <- nrow(df)

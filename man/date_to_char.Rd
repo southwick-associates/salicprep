@@ -15,6 +15,9 @@ when writing data. It's a very slow operation, so not efficient with regard to
 computation, but the alternative is to specify as character on load; 
 a tedious thing to do with a larger number of variables.
 }
+\examples{
+# sale <- date_to_char(sale)
+}
 \seealso{
 Other functions for preparing license data: 
 \code{\link{check_raw_lines}()},
