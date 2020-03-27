@@ -86,10 +86,10 @@ summary_date <- function(
     df, date_var, yrs, samp_size = 100000,
     facet = function() facet_wrap(~ .data$year, scales = "free_x")
 ) {
-    df$year <- lubridate::year(df[[date_var]])
-    
     # summarize years outside select years
+    df$year <- lubridate::year(df[[date_var]])
     outside <- filter(df, !.data$year %in% yrs)
+    
     if (nrow(outside) > 0) {
         cat("Additional years outside of", yrs, "are included in data:\n")
         outside %>%
@@ -97,7 +97,6 @@ summary_date <- function(
             arrange(desc(.data$n)) %>%
             print()
     }
-    
     # plot years of interest
     df <- filter(df, .data$year %in% yrs)
     if (!is.null(samp_size)) {
@@ -107,6 +106,35 @@ summary_date <- function(
         geom_histogram() +
         scale_x_date(date_labels = "%b") +
         ggtitle(paste("Distribution of", date_var, "by year")) +
+        facet()
+}
+
+#' Summarize distribution of end_date - start_date by year
+#' 
+#' @inheritParams summary_date
+#' @param start variable name for start date
+#' @param end variable name for end date
+#' @param dot variable name for transaction date
+#' @family functions to summarize license data
+#' @export
+#' @examples 
+#' # summary_duration(sale, 2010:2019)
+summary_duration <- function(
+    df, yrs, start = "start_date", end = "end_date", dot = "dot",
+    samp_size = 100000,
+    facet = function() facet_wrap(~ .data$year)
+) {
+    df$duration <- lubridate::interval(df[[start]], df[[end]]) / lubridate::ddays()
+    df$year <- lubridate::year(df[[dot]])
+    
+    x <- filter(df, .data$year %in% yrs, !is.na(.data$duration))
+    if (!is.null(samp_size)) {
+        x <- sample_n(x, samp_size)
+    }
+    ggplot(x, aes(.data$duration)) +
+        geom_histogram() +
+        ggtitle(paste("Distribution (by transaction year) of durations",
+                      "(end - start date)")) +
         facet()
 }
 

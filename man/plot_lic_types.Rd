@@ -24,6 +24,7 @@ Make a heatmap of license type customers by year
 Other functions to summarize license data: 
 \code{\link{plot_demo}()},
 \code{\link{summary_date}()},
+\code{\link{summary_duration}()},
 \code{\link{summary_lic_types}()},
 \code{\link{summary_year_dot}()}
 }
