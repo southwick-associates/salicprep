@@ -34,6 +34,8 @@ A suggested data processing sequence is outlined below.
 5. [Finalize Production Data](#5-finalize-production-data)
 6. [Final Validation](#6-final-validation)
 
+After data processing a dashboard summary data table can be built using provided functions (see [License History & Summary Data](history-summary.md)).
+
 ### 0-Initialize new state
 
 From an R console on the server, run `lictemplate::new_project("state-abbreviation", "period")` to populate template files and folders for dashbaord production. Then open the corresponding ".Rproj" file created and run `renv::restore()` to setup the packages needed for the template workflow.

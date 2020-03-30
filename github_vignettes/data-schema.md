@@ -19,7 +19,7 @@ The endpoint of the data processing is a production database of 3 tables with st
 
 ### Documentation & Sample Data
 
-The [package salic vignette](https://southwick-associates.github.io/salic/articles/salic.html) includes a discussion about standardized data and the logic for the data structures employed. This package includes example production data that you can make use of:
+The [salic vignette](https://southwick-associates.github.io/salic/articles/salic.html) includes a discussion about standardized data and the logic for the data structures employed. The `salic` package includes example production data that you can also experiment with:
 
 ```r
 install.packages("remotes")
@@ -27,7 +27,7 @@ remotes::install_github("southwick-associates/salic")
 data(cust, lic, sale, package = "salic")
 ```
 
-### Guidelines
+### Standardization Guidelines
 
 - Standard names should be used
 - Standard coding should be used for categorical data (sex, residency, dates)
