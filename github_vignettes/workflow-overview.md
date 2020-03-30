@@ -86,4 +86,4 @@ The anonymized production data is created at this stage.
 
 ### 6-Final Validation
 
-This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). To some degree it repeats the initial validation, but summaries may look different for production date due to customer deduplication, etc.
+This step involves summarizing the data in various ways to gain confidence in the trends it presents (overall, by demographic, etc.), and potentially identify any problems in the data (which may require discussion with state agency folks to sort out). To some degree it repeats the initial validation, but summaries may look different for production data due to customer deduplication, etc.
