@@ -12,7 +12,7 @@ Written for national/regional dashboards, although potentially relevant for othe
 - [Workflow Overview](github_vignettes/workflow-overview.md)
     + TODO: [Customer Deduplication](github_vignettes/customer-deduplication.md)
     + TODO: [Residency Identification](github_vignettes/residency-identification.md)
-    + TODO: [License History & Summary Data](github_vignettes/history-summary.md)
+    + [License History & Summary Data](github_vignettes/history-summary.md)
 - [Data required from states](github_vignettes/data-required.md)
 - [Database Schemas](github_vignettes/data-schema.md)
 

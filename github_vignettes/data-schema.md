@@ -17,11 +17,9 @@ The endpoint of the data processing is a production database of 3 tables with st
 
 ![](./img/relations.png)
 
-*Note that although residency (res) is a customer-level variable, it can change over time; hence the recommended sale-level specification.*
+### Documentation & Sample Data
 
-### Sample Data
-
-You can view example production data using Southwick's `salic` R package. More in-depth background about the data structure is included in the [salic vignette](https://southwick-associates.github.io/salic/articles/salic.html) where production data is referred to as "standardized license data".
+The [package salic vignette](https://southwick-associates.github.io/salic/articles/salic.html) includes a discussion about standardized data and the logic for the data structures employed. This package includes example production data that you can make use of:
 
 ```r
 install.packages("remotes")
