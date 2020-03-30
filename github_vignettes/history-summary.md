@@ -3,7 +3,7 @@
 
 Once license data is stored in a standardized format, several functions can be applied in sequence to build the necessary summary data. The Southwick package `dashtemplate`  (installable from the Data Server: E:/SA/Projects/R-Software/Southwick-packages/build_binary/dashtemplate_0.1.zip) includes the relevant functions. The workflow has been documented in a github repo,  [dashboard-template](https://github.com/southwick-associates/dashboard-template), for sharing with state agency folks who choose to produce their own summary data.
 
-## Workflow Documentation
+### Workflow Documentation
 
 Information about the corresponding data structures and workflow is included in the package `salic` documentation:
 
@@ -12,7 +12,7 @@ Information about the corresponding data structures and workflow is included in 
 
 ## Summary Data Request Documentation
 
-State agencies that are considering building their own summary data are sent an 8-page Word document that details the required data. A few of the relevant sections are included here mostly unchanged.
+State agencies that are considering building their own summary data are sent an 8-page Word document that details the required data. The relevant sections from that document are copied below.
 
 ### Overview & Scope
 
@@ -24,7 +24,7 @@ Summary datasets should be sent to Southwick Associates twice per year for the d
 
 #### Data Filter: Only customers aged 18-64 each year
 
-To facilitate a consistent comparison across states, only customers aged 18-64 each year should be included in the summary results.  For example, suppose a man aged 64 in 2015 buys a fishing license in both 2015 and 2016. He should be included in the 2015 summary statistics, but not for those in 2016. Note that youths and seniors are excluded because states vary in whether they issue licenses for these age groups. The corresponding age filter should be applied as a final step, so that recruitment/churn is still captured to the degree possible.
+To facilitate a consistent comparison across states, only customers aged 18-64 each year should be included in the summary results. For example, suppose a man aged 64 in 2015 buys a fishing license in both 2015 and 2016. He should be included in the 2015 summary statistics, but not for those in 2016. Note that youths and seniors are excluded because states vary in whether they issue licenses for these age groups. The corresponding age filter should be applied as a final step, so that recruitment/churn is still captured to the degree possible.
 
 #### Metrics to Include
 
@@ -51,11 +51,17 @@ A single table of summary data (stored in a .csv or similar tabular data format)
 - timeframe: The time period covered:
     + "full-year" includes all customers each calendar year
     + "mid-year" includes only customers with licenses purchased during the first six months of the calendar year (Jan 1 through June 30) 
+    
 - group: The group of sportspersons described (hunt, fish, all_sports). Note that "all_sports" is an overall group referring to customers holding a hunting license, a fishing license, or both. Customers holding combination hunting/fishing licenses should be included in all three groups.
+
 - segment: Demographic breakout of sportspersons ("All", "Residency", "Gender", "Age")
+
 - category: Selected category of the segment (example for age: "18-24", "25-34", etc.)
+
 - year: Calendar year of license purchase (2009, 2010, …)
+
 - metric: Quantity measured ("participants", "residents", "recruits", "churn")
+
 - value: The calculated numeric measure for the selected metric & dimension
 
 **Example:** Total fishing participation by year

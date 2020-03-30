@@ -5,7 +5,7 @@ Overview: preference for state-supplied transaction-level residency, but we migh
 
 ## Example Code
 
-Using functions from salicprep:
+Using functions from package `salicprep`:
 
 ```r
 sale <- res_id_type(sale, lic)
