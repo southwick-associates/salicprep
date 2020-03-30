@@ -1,7 +1,9 @@
 
 # Workflow Overview
 
-This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate), [workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
+This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://github.com/southwick-associates/salic), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate), [dashtemplate](https://github.com/southwick-associates/dashboard-template),
+[workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
+
 
 ## Server Resources
 
@@ -34,7 +36,7 @@ A suggested data processing sequence is outlined below.
 5. [Finalize Production Data](#5-finalize-production-data)
 6. [Final Validation](#6-final-validation)
 
-After data processing a dashboard summary data table can be built using provided functions (see [License History & Summary Data](history-summary.md)).
+After data processing a dashboard summary data table can be built using provided functions. see [License History & Summary Data](history-summary.md) for more info.
 
 ### 0-Initialize new state
 
@@ -84,7 +86,9 @@ This step is intended to catch any obvious data problems early. Most data issues
 
 The anonymized production data is created at this stage.
 
-**Deduplication:** No duplicates should be included in the production customer table, and we will want to check the state-supplied customer ID at this stage by using first name, last name, and date of birth (if provided by the agency).
+**Customer Deduplication:** No duplicates should be included in the production customer table, and we will want to check the state-supplied customer ID at this stage by using first name, last name, and date of birth (if provided by the agency). See [Customer Deduplication](customer-deduplication.md) for more info.
+
+**Residency Identifcation:**: State agencies may or may not provide a transaction-level residency variable. If not, a sequence of steps will need to be performed to identify residency. See [Residency Identification](residency-identification.md) for more info.
 
 ### 6-Final Validation
 
