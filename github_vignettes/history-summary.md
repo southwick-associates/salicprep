@@ -14,6 +14,10 @@ Information about the corresponding data structures and workflow is included in 
 
 State agencies that are considering building their own summary data are sent an 8-page Word document that details the required data. The relevant sections from that document are copied below.
 
+- [Overview & Scope](#overview-&-scope)
+- [Requested Format](#requested-format)
+- [Data Definitions](#data-definitions)
+
 ### Overview & Scope
 
 Dashboards require summarized data that focus on customer-level dynamics (as opposed to license summaries which typically look at license-level dynamics such as total sales, percent changes, etc.). The customer-level focus relies on a customer ID, which enables trending on metrics such as churn and recruitment.
