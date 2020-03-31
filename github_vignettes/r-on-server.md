@@ -1,23 +1,31 @@
 
 # R on Server Info
 
-Provide information about the R installation on the server and some recommendations for usage
+Provide information about the R installation on the server and some recommendations for usage.
+
+- Getting Started
+- Usage
+- Installation Customization
 
 ## Getting started
 
 Include some info on how to open R for the first time and what you should see. Also reference [Rstudio Recommended Settings](rstudio-settings.md). 
 
-## Installation Location
+## Usage
 
-E drive
+Probably give a little background on renv here, and the cache location.
+
+## Installation Customization
+
+R is installed on the E:/ drive instead of the default C:/ drive:
 
 ![](img/r-install.png)
 
-## Customization
+### Startup
 
-Customized R install files are located in `./R-3-6.3/etc/`
+Two files that define the customized system-level R startup are located in a subfolder of the R installation (`./R-3-6.3/etc/`). You can learn more about R startup settings by running `?Startup` from the console.
 
-### Rprofile.site
+#### Rprofile.site
 
 ```r
 # Defines some Southwick server setup
@@ -49,12 +57,11 @@ cat(paste0(
 ))
 
 })     
-
 ```
 
-### Renviron.site
+#### Renviron.site
 
-```
+```r
 # Southwick Environmental Variables
 
 # Version-specific user library
@@ -69,5 +76,4 @@ RENV_PATHS_LOCAL = 'E:/SA/Projects/R-Software/Southwick-packages/_builds_binary'
 
 # For using the US Census API
 CENSUS_API_KEY = '7ce74869fb8e921c9aacef808dc7c2180c1e1d73'
-
 ```
