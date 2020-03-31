@@ -2,8 +2,7 @@
 # Workflow Overview
 
 This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://southwick-associates.github.io/salic/), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate), [dashtemplate](https://github.com/southwick-associates/dashboard-template),
-[workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location (see [Data Server Setup & Rules](server-setup.md) for details).
-
+[workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location. See [Data Server Setup & Rules](server-setup.md) for more information about the server.
 
 ## Server Resources
 

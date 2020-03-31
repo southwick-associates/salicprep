@@ -11,11 +11,11 @@ Written for national/regional dashboards, although potentially relevant for othe
     + TODO: [R on Server Info](github_vignettes/r-on-server.md)
     + [Rstudio Recommended Settings](github_vignettes/rstudio-settings.md)
 - [Workflow Overview](github_vignettes/workflow-overview.md)
+    + [Data required from states](github_vignettes/data-required.md)
+    + [Database Schemas](github_vignettes/data-schema.md)
     + TODO: [Customer Deduplication](github_vignettes/customer-deduplication.md)
     + TODO: [Residency Identification](github_vignettes/residency-identification.md)
     + [License History & Summary Data](github_vignettes/history-summary.md)
-- [Data required from states](github_vignettes/data-required.md)
-- [Database Schemas](github_vignettes/data-schema.md)
 - TODO: [Dashboard Management](github_vignettes/dashboard-management.md)
 
 ## Installation
