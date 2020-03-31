@@ -32,22 +32,6 @@ recode_date <- function(df, date_var, fun) {
     select(df, -.data$date_in)
 }
 
-#' Set unreasonable transaction date values to missing
-#' 
-#' This function asssumes that only values within the range covered by the "year"
-#' variable are reasonable (i.e., year and dot should correspond)
-#' 
-#' @param df frame that holds date variable
-#' @param date_var name of date variable
-#' @param year_var name of year variable
-#' @family functions for preparing license data
-#' @export
-#' @examples 
-#' # sale <- date_truncate(sale)
-date_truncate <- function(df, date_var = "dot", year_var = "year") {
-    
-}
-
 #' Convert all date columns in a data frame to character
 #' 
 #' A convenience function to prepare for sqlite, which doesn't translate R dates 

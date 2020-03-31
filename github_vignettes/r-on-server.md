@@ -6,7 +6,8 @@ Provide information about the R installation on the server and some recommendati
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Installation Customization](#installation-customization)
-- [Reinstalling & Updating](#reinstalling-and-updating)
+- [Reinstalling R](#reinstalling-r)
+- [Updating R](#updating-r)
 
 ## Getting started
 
@@ -14,7 +15,7 @@ Include some info on how to open R for the first time and what you should see. A
 
 ## Usage
 
-Probably give a little background on renv here, and the cache location.
+Probably give a little background on renv here, and the cache location. Also discuss package installation (either into an renv project library or into your user-specific library).
 
 ## Installation Customization
 
@@ -79,6 +80,9 @@ RENV_PATHS_LOCAL = 'E:/SA/Projects/R-Software/Southwick-packages/_builds_binary'
 CENSUS_API_KEY = '7ce74869fb8e921c9aacef808dc7c2180c1e1d73'
 ```
 
-## Reinstalling and Updating
+## Reinstalling R
 
 Probably include some info here in case R needs to be reinstalled (and what to do when updating).
+
+## Updating R
+
