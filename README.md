@@ -16,6 +16,7 @@ Written for national/regional dashboards, although potentially relevant for othe
     + [License History & Summary Data](github_vignettes/history-summary.md)
 - [Data required from states](github_vignettes/data-required.md)
 - [Database Schemas](github_vignettes/data-schema.md)
+- TODO: [Dashboard Management](github_vignettes/dashboard-management.md)
 
 ## Installation
 

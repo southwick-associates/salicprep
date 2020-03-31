@@ -3,9 +3,10 @@
 
 Provide information about the R installation on the server and some recommendations for usage.
 
-- Getting Started
-- Usage
-- Installation Customization
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Installation Customization](#installation-customization)
+- [Reinstalling & Updating](#reinstalling-and-updating)
 
 ## Getting started
 
@@ -77,3 +78,7 @@ RENV_PATHS_LOCAL = 'E:/SA/Projects/R-Software/Southwick-packages/_builds_binary'
 # For using the US Census API
 CENSUS_API_KEY = '7ce74869fb8e921c9aacef808dc7c2180c1e1d73'
 ```
+
+## Reinstalling and Updating
+
+Probably include some info here in case R needs to be reinstalled (and what to do when updating).
