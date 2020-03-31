@@ -14,9 +14,9 @@ Information about the corresponding data structures and workflow is included in 
 
 State agencies that are considering building their own summary data are sent an 8-page Word document that details the required data. The relevant sections from that document are copied below.
 
-- [Overview & Scope](#overview-&-scope)
-- [Requested Format](#requested-format)
-- [Data Definitions](#data-definitions)
+- [Overview & Scope](#overview-&-scope) provides a high-level view of the data requested.
+- [Requested Format](#requested-format) provides details regarding how the summarized data needs to be represented.
+- [Data Definitions](#data-definitions) includes information about how metrics are defined and how certain types of data need to be treated (e.g., multi-year/lifetime licenses).
 
 ### Overview & Scope
 
