@@ -19,10 +19,12 @@ These rules must always be followed:
 - Lock your personal computer (or terminate the Southwick VPN) when you are away from your machine.
 - Don't install software without permission of the project manager.
 
-You should also be cognizant of how much of the shared resources you are using (particularly RAM):
+### Shared Resource Guidelines
+
+You should also be cognizant of how much of the shared resources you are using (particularly RAM). You can use [Task Manager](https://en.wikipedia.org/wiki/Task_Manager_(Windows)) to view your usage.
 
 - When working with large datasets in R, use a SQLite interface to limit data queries to the rows/columns that you need (i.e., avoid pulling complete datasets into R if possible).
-- Close resource-heavy applications when not in use.
+- Close resource-heavy applications when not in use. In particular, don't keep R sessions open with large datasets loaded in RAM unless you are actively working with data.
 - Log off from the Server at the end of your work day (From your Remote Desktop: Start >> log off) .
 
 ## VPN & Remote Desktop Setup
