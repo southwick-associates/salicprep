@@ -1,7 +1,9 @@
 
 # R on Server Info
 
-Provide information about the R installation on the server and some recommendations for usage.
+R is available on the server for all Remote Desktop users. 
+
+### Contents
 
 - [Getting Started](#getting-started)
 - [Usage](#usage)
