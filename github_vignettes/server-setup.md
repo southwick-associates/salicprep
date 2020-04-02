@@ -5,6 +5,8 @@ Southwick Associates maintains a high-performance server in its office that can 
 
 Data used in processing dashboards is highly sensitive, and state license data **must never** be transferred to another machine (i.e., it can only live on the data server).
 
+### Contents
+
 - [Usage Rules](#usage-rules)
 - [Windows VPN/RD Setup](#windows-setup)
 - [Mac VPN/RD Setup](#mac-setup)
