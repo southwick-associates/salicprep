@@ -1,9 +1,7 @@
 
 # R on the Data Server
 
-R is available on the server for all Remote Desktop users (installed on the E:/ drive). Rstudio (available on the server) should find the existing R install with no problem the first time you use it (and default to the most recent version, 3.6.3 as of April 2020):
-
-![](img/r-install.png)
+R and Rstudio are available on the server for all Remote Desktop users (installed on the E:/ drive). Rstudio should detect the existing R install with no problem when first launched (and default to the most recent version, 3.6.3 as of April 2020).
 
 ### Contents
 
@@ -14,17 +12,15 @@ R is available on the server for all Remote Desktop users (installed on the E:/ 
 
 ## Usage
 
-### Getting started
-
-Launch Rstudio (e.g., click on start menu and type "RStudio"). You should first make some changes to the Rstudio settings (see [Rstudio Recommended Settings](rstudio-settings.md)). I also recommend using [RStudio Projects](https://r4ds.had.co.nz/workflow-projects.html) to organize any analyses.
+To get started, first launch Rstudio (e.g., click on start menu and type "RStudio"). You should then make some changes to the Rstudio settings (see [Rstudio Recommended Settings](rstudio-settings.md)). I also recommend using [RStudio Projects](https://r4ds.had.co.nz/workflow-projects.html) to organize any analyses.
 
 When you open Rstudio, you should see a customized startup message in the R console. The customization is very minor (and shouldn't impact your work), but you can get more information in the [Installation Customization](#installation-customization) section below.
 
 ![](img/r-message.png)
 
-### Project Libraries
+### R Package Libraries
 
-Every user will have access to two package libraries, which you can view by running `.libPaths()` from the R console. The first element of the vector returned by this function represents the default storage location (e.g., if you run `install.packages()`). This path represents the user library that only you have access to. You shouldn't install packages to the path in the second element (the system library), although you can load packages stored here (i.e., those that come with the base R installation).
+Every user will have access to two R package libraries, which you can view by running `.libPaths()` from the R console:
 
 ```r
 .libPaths()
@@ -32,15 +28,23 @@ Every user will have access to two package libraries, which you can view by runn
 ## [2] "E:/Program Files/R/R-3.6.3/library"
 ```
 
-#### Renv
+These two libraries serve distinct purposes:
 
-The [renv package] 
+1. The first element of the vector returned by this function represents the default package installation location (e.g., if you run `install.packages()`). This user library path is a place for packages that only you have access to. You can install any package you want here.
 
-Probably give a little background on renv here, and the cache location. Also discuss package installation (either into an renv project library or into your user-specific library).
+2. The second element represents the system library (i.e., those that come with the base R installation). You shouldn't install packages here (although this shouldn't happen unless you point to it directly on package installation).
+
+### Renv Project Libraries
+
+The [renv package](https://rstudio.github.io/renv/index.html) provides a means to isolate project package libraries (useful for reproducibility and avoiding conflicts between ongoing projects). I recommend using renv for your project analyses if you are comfortable with doing so. Renv makes use of a package cache located in the R install folder, which enables project-specific libraries (through linked folders) that can be installed/restored very quickly. 
 
 ## Installation Customization
 
 R is installed on the E:/ drive instead of the default C:/ drive. A small amount of customization to the startup behavior is performed using 2 files, outlined below.
+
+### Install Location
+
+![](img/r-install.png)
 
 ### Startup
 
