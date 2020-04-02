@@ -31,7 +31,7 @@ These two libraries serve distinct purposes:
 
 1. The first element of the vector returned by `.libPaths()` represents the default package installation location (e.g., if you run `install.packages()`). This user library is a place for packages that only you have access to, and you are welcome to install any packages you want here.
 
-2. The second element represents the system library (i.e., those that come with the base R installation). You shouldn't install packages here (although this shouldn't happen by default).
+2. The second element represents the system library (i.e., those that come with the base R installation). You shouldn't install packages here (although this shouldn't occur by default).
 
 ### Renv Project Libraries
 
@@ -104,8 +104,8 @@ CENSUS_API_KEY = '7ce74869fb8e921c9aacef808dc7c2180c1e1d73'
 
 ### Reintalling
 
-It's possible that something could go wrong with the R installation, and you'll want to start fresh. Fortunately this is very easy (and fast). Make sure to copy the Renviron.site and Rprofile.site documented above and then simply delete the relevant R version directory. Then you can [download R](https://cran.r-project.org/bin/windows/base/) and install to the E:/ drive. Just place the site files under ./etc/ and you are good to go.
+It's possible that something could go wrong with the R installation, and you'll want to start fresh. Fortunately this is very easy (and fast). Make sure to copy the Renviron.site and Rprofile.site documented above and then simply delete the relevant R version directory. Then you can [download R](https://cran.r-project.org/bin/windows/base/) and install to `E:/Program Files/R/`. Just place the site files under `./etc/` and you are good to go.
 
 ### Updating
 
-Similar to reinstalling, but no deletion is required. Simply point to E:/Program Files/R/ during install and the new version should be placed alongside existing R versions.
+Similar to reinstalling, but no deletion is required. Simply point to `E:/Program Files/R/` during install and the new version should be placed alongside existing R versions. Then copy over the site files from the previous version.
