@@ -1,33 +1,50 @@
 
-# R on Server Info
+# R on the Data Server
 
-R is available on the server for all Remote Desktop users. 
+R is available on the server for all Remote Desktop users (installed on the E:/ drive). Rstudio (available on the server) should find the existing R install with no problem the first time you use it (and default to the most recent version, 3.6.3 as of April 2020):
+
+![](img/r-install.png)
 
 ### Contents
 
-- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Installation Customization](#installation-customization)
 - [Reinstalling R](#reinstalling-r)
 - [Updating R](#updating-r)
 
-## Getting started
-
-Include some info on how to open R for the first time and what you should see. Also reference [Rstudio Recommended Settings](rstudio-settings.md). 
-
 ## Usage
+
+### Getting started
+
+Launch Rstudio (e.g., click on start menu and type "RStudio"). You should first make some changes to the Rstudio settings (see [Rstudio Recommended Settings](rstudio-settings.md)). I also recommend using [RStudio Projects](https://r4ds.had.co.nz/workflow-projects.html) to organize any analyses.
+
+When you open Rstudio, you should see a customized startup message in the R console. The customization is very minor (and shouldn't impact your work), but you can get more information in the [Installation Customization](#installation-customization) section below.
+
+![](img/r-message.png)
+
+### Project Libraries
+
+Every user will have access to two package libraries, which you can view by running `.libPaths()` from the R console. The first element of the vector returned by this function represents the default storage location (e.g., if you run `install.packages()`). This path represents the user library that only you have access to. You shouldn't install packages to the path in the second element (the system library), although you can load packages stored here (i.e., those that come with the base R installation).
+
+```r
+.libPaths()
+## [1] "C:/Users/Dan Kary/Documents/R/win-library/3.6.3"
+## [2] "E:/Program Files/R/R-3.6.3/library"
+```
+
+#### Renv
+
+The [renv package] 
 
 Probably give a little background on renv here, and the cache location. Also discuss package installation (either into an renv project library or into your user-specific library).
 
 ## Installation Customization
 
-R is installed on the E:/ drive instead of the default C:/ drive:
-
-![](img/r-install.png)
+R is installed on the E:/ drive instead of the default C:/ drive. A small amount of customization to the startup behavior is performed using 2 files, outlined below.
 
 ### Startup
 
-Two files that define the customized system-level R startup are located in a subfolder of the R installation (`./R-3-6.3/etc/`). You can learn more about R startup settings by running `?Startup` from the console.
+Two files (`Rprofile.site` and `Renviron.site`) that define the customized system-level R startup are located in a subfolder of the R installation (`./R-3-6.3/etc/`). You can learn more about R startup settings by running `?Startup` from the console.
 
 #### Rprofile.site
 

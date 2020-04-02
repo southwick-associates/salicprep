@@ -8,7 +8,7 @@ Written for national/regional dashboards, although potentially relevant for othe
 
 - [Dashboard Analyst Introduction](github_vignettes/dashboard-overview.md)
     + [Data Server Setup & Rules](github_vignettes/server-setup.md)
-    + TODO: [R on Server Info](github_vignettes/r-on-server.md)
+    + [R on the Data Server](github_vignettes/r-on-server.md)
     + [Rstudio Recommended Settings](github_vignettes/rstudio-settings.md)
 - [Workflow Overview](github_vignettes/workflow-overview.md)
     + [Data required from states](github_vignettes/data-required.md)
