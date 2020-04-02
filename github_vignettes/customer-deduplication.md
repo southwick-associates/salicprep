@@ -5,17 +5,17 @@ State agencies include customer IDs for tracking customers over time, but their 
 
 ## Duplicate Checking Method
 
-Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letter of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Package](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
+Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letters of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Package](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
 
 ## Choosing Whether to Deduplicate
 
-Deduplication inherently involves a tradeoff of [false positives vs. false negatives](#false-negatives-vs-false-positives) which I discuss further at the end of this document. Statistically speaking, if we choose to deduplicate, then we are guaranteed to produce some number of false positives (distinct customers who we identify as the same). We must balance this against the potential for a high number of false negatives (customers with multiple IDs) if we choose not to deduplicate.
+Deduplication inherently involves a tradeoff of [false positives vs. false negatives](#false-negatives-vs-false-positives) which I discuss in more detail at the end of this document. The upshot: statistically speaking, if we choose to deduplicate, then we are guaranteed to produce some number of false positives (distinct customers who we identify as the same). We must balance this against the potential for a high number of false negatives (customers with multiple IDs) if we choose not to deduplicate.
 
-With dashboards, I've generally chosen a conservative approach in which we stick with the state-provided customer ID unless our estimated deduplication rate is above 4-5% or so (and then only deduplicate with agency permission). This is somewhat arbitrary, but deduplication involves a fair amount of work, and it's difficult to know for sure whether our new customer ID provides more accurate estimates of participants/churn/etc than the state-supplied customer ID.
+With dashboards, I've generally chosen a conservative approach in which we stick with the state-provided customer ID unless our estimated deduplication rate is above 4-5% or so (and then only deduplicate with agency permission). This percentage threshold is somewhat arbitrary, but deduplication involves a fair amount of work, and it's difficult to know for sure whether our new customer ID provides more accurate estimates of participants/churn/etc than the state-supplied customer ID. Hence, I've erred on the side of caution with deduplication.
 
 ## Deduplication Code Example
 
-Using functions from packages salic and salicprep, the below code:
+If you do need to deduplicate, you can access functions in salic and salicprep that should make your job easier. The below code:
 
 1. Runs through a number of duplication checking steps
 2. Identifies and Removes duplicates
@@ -75,14 +75,14 @@ filter(sale, is.na(cust_id)) # should be zero rows
 
 There is an inherent tradeoff if we choose to deduplicate records. If we estimate a high duplication rate in the state-provided customer ID, then we may have a situation in which the state's customer linkage has a high level of false negatives compared to false negatives. This might suggest to us that we could improve the customer linkage, but we need to be aware that any deduplication we pursue will produce both types of false identification. 
 
-In theory, this tradeoff could be represented by the relationships below, where the `max.distance` parameter identifies duplicates more aggresively it is increases (e.g., like the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge/).
+In theory, this tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that identifies duplicates more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge/).
 
-**Tradeoff:** As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decrease but the number of false positives increase. 
+**Tradeoff:** As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
 
 ![](img/dedup1.png)
 
 **Optimum:** The optimum parameter value is that which minimizes the false linkages.
 
-In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results.
+In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample.
 
 ![](img/dedup2.png)
