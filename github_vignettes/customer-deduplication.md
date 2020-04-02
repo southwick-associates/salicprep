@@ -75,11 +75,9 @@ filter(sale, is.na(cust_id)) # should be zero rows
 
 There is an inherent tradeoff if we choose to deduplicate records. If we estimate a high duplication rate in the state-provided customer ID, then we may have a situation in which the state's customer linkage has a high level of false negatives compared to false negatives. This might suggest to us that we could improve the customer linkage, but we need to be aware that any deduplication we pursue will produce both types of false identification. 
 
-In theory, this tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that identifies duplicates more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge/).
+### Record Linkage
 
-### Tradeoff
-
-As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
+Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge/). As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
 
 ![](img/dedup1.png)
 
