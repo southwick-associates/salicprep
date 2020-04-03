@@ -9,7 +9,9 @@ Through past experience, Southwick analysts have generally agreed on a conventio
 
 ## Choosing Whether to Deduplicate
 
-Deduplication inherently involves a tradeoff of [false positives vs. false negatives](#false-negatives-vs-false-positives) which I discuss in more detail at the end of this document. The upshot: statistically speaking, if we choose to deduplicate, then we are guaranteed to produce some number of false positives (distinct customers who we identify as the same). We must balance this against the potential for a high number of false negatives (customers with multiple IDs) if we choose not to deduplicate.
+Deduplication inherently involves a tradeoff of [false positives vs. false negatives](#false-negatives-vs-false-positives) which I discuss in more detail at the end of this document. **The upshot:** Statistically speaking, if we choose to deduplicate, then we are guaranteed to produce some number of false positives (distinct customers who we identify as the same). We must balance this against the potential for a high number of false negatives (customers with multiple IDs) if we choose not to deduplicate.
+
+### Rule of Thumb
 
 With dashboards, I've generally chosen a conservative approach in which we stick with the state-provided customer ID unless our estimated deduplication rate is above 4-5% or so (and then only deduplicate with agency permission). This percentage threshold is somewhat arbitrary, but deduplication involves a fair amount of work, and it's difficult to know for sure whether our new customer ID provides more accurate estimates of participants/churn/etc than the state-supplied customer ID. Hence, I've erred on the side of caution with deduplication.
 
