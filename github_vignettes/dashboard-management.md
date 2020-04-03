@@ -3,11 +3,13 @@
 
 This document is intended as a portal for dashboard analysis management. It covers a number of topics that go beyond what is needed for analysts producing dashboard summary data for individual states as part of the national/regional dashboard project.
 
-**Individual State Dashboards:** Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Relevant documentation is stored in that repository.
+### Individual State Dashboards
+
+Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Relevant documentation is stored in that repository.
 
 ### Archived Documentation
 
-The dashboard documentation was originally stored in [Office 365 >> Data Dashboards >> _Analyst Docs](https://southwickassociatesinc.sharepoint.com/:x:/s/datadashboards/EY1-RDDhCtVLuLDnapCVIrIBMFAzC-beAuiVuZlFiND0fw?e=Iha6au). These documents are primarily focused on individual state dashboards, and are linked here for future reference. The Github documentation was written as a replacement for the O365 documentation.
+The dashboard documentation was originally stored in [Office 365 >> Data Dashboards >> _Analyst Docs](https://southwickassociatesinc.sharepoint.com/:f:/s/datadashboards/EqI3PX-tnbtBreBfPa-87-UBwcYlg5k34CKuHMcY5dj9nw?e=uOBtDI) These documents are primarily focused on individual state dashboards, and are linked here for future reference. The Github documentation was written as a replacement for the O365 documentation.
 
 ### State Agency Communication
 
@@ -15,7 +17,7 @@ The dashboard analysis manager will be coordinating with Lisa P on communication
 
 - [License Data Requirements](https://southwickassociatesinc.sharepoint.com/:w:/s/datadashboards/EdpmT1PXnYhHiAUBAnLj-GQByZhMxXTYRBShHmHZumiJ-Q?e=zkXRmg) for states that send sensitive license data
 - [Summary Data Requirements](https://southwickassociatesinc.sharepoint.com/:w:/s/datadashboards/Ef05MOWznuRLtc0lkfNbTYwBQhykyrZLW7RheM7ZoksSPQ?e=aUyuzn) for states that choose not to send license data
-    + [Summary Data Example](https://southwickassociatesinc.sharepoint.com/:x:/s/datadashboards/EY1-RDDhCtVLuLDnapCVIrIBMFAzC-beAuiVuZlFiND0fw?e=Iha6au) to provide a concrete example of the data format we are requesting
+- [Summary Data Example](https://southwickassociatesinc.sharepoint.com/:x:/s/datadashboards/EY1-RDDhCtVLuLDnapCVIrIBMFAzC-beAuiVuZlFiND0fw?e=Iha6au) to provide a concrete example of the summarized data format we are requesting
 
 ### Combining States
 
