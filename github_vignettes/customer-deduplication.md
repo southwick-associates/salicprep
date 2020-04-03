@@ -83,10 +83,14 @@ There is an inherent tradeoff if we choose to deduplicate records. If we estimat
 
 Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge). As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
 
-<img src="img/dedup1.png" height="300">
+#### Tradeoff of False Negatives/Positives
+
+<img src="img/dedup1.png" height="350">
 
 ### Theoretical Optimum
 
 In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample.
 
-<img src="img/dedup2.png" height="300">
+#### Minimizing False Linkages
+
+<img src="img/dedup2.png" height="350">
