@@ -3,19 +3,13 @@
 
 This document is intended as a portal for dashboard analysis management. It covers a number of topics that go beyond what is needed for analysts producing dashboard summary data for individual states as part of the national/regional dashboard project.
 
-### Contents
-
-- [Archived Documentation](#archived-documentation)
-- [State Agency Communication](#state-agency-communication) 
-- [Combining States for National/Regional Dashboard](#combining-states) 
-
 **Individual State Dashboards:** Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Relevant documentation is stored in that repository.
 
-## Archived Documentation
+### Archived Documentation
 
 The dashboard documentation was originally stored in [Office 365 >> Data Dashboards >> _Analyst Docs](https://southwickassociatesinc.sharepoint.com/:x:/s/datadashboards/EY1-RDDhCtVLuLDnapCVIrIBMFAzC-beAuiVuZlFiND0fw?e=Iha6au). These documents are primarily focused on individual state dashboards, and are linked here for future reference. The Github documentation was written as a replacement for the O365 documentation.
 
-## State Agency Communication
+### State Agency Communication
 
 The dashboard analysis manager will be coordinating with Lisa P on communication with state agencies. Initially, this will involve sending data request documents to states, stored in [Office 365 >> Data Dashboards >> _Data Requests](https://southwickassociatesinc.sharepoint.com/:f:/s/datadashboards/EqfCkmTfLxhEjcuF3sJUexgBmSEH0bEdMYhRcWfNM4s7jA?e=PRth6I):
 
@@ -23,7 +17,7 @@ The dashboard analysis manager will be coordinating with Lisa P on communication
 - [Summary Data Requirements](https://southwickassociatesinc.sharepoint.com/:w:/s/datadashboards/Ef05MOWznuRLtc0lkfNbTYwBQhykyrZLW7RheM7ZoksSPQ?e=aUyuzn) for states that choose not to send license data
     + [Summary Data Example](https://southwickassociatesinc.sharepoint.com/:x:/s/datadashboards/EY1-RDDhCtVLuLDnapCVIrIBMFAzC-beAuiVuZlFiND0fw?e=Iha6au) to provide a concrete example of the data format we are requesting
 
-## Combining States
+### Combining States
 
 Individual state summary data is produced by dashboard analysts, but a final aggregation step is needed in order to:
 
