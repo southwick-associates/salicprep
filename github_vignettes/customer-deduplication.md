@@ -7,7 +7,7 @@ State agencies include customer IDs for tracking customers over time, but their 
 
 Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letters of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Software](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
 
-*If address is available, you could use Bulk Mailer to get a unique location identifier (zip4dp) to reduce false positives in deduplication.*
+*If address is available, you could use Bulk Mailer to get a unique location identifier (zip4dp) to  further reduce false positives in the deduplication procedure.*
 
 ## Choosing Whether to Deduplicate
 
@@ -33,20 +33,21 @@ Deduplication could be performed in the script that produces production data (i.
 
 ```r
 library(tidyverse)
+library(DBI)
 library(salic)
 library(salicprep)
 
 ### A. Load Data
-# - you would first need to load data from SQLite
+# - you would first need to load data from SQLite (cust, lic, sale)
 
 ### B. Deduplicate Customers
 
-# check: exact dups?
+# check: any exact duplicates?
 nrow(cust)
 nrow(cust) == length(unique(cust$cust_id))
 nrow(cust) == distinct(cust, cust_id, sex, dob, last, first, state, cust_res) %>% nrow()
 
-# check: one customer for multiple cust_ids?
+# check: any records with one customer for multiple cust_ids?
 select(cust, dob, last, first) %>% check_dups()
 dup <- count(cust, first, last, dob) %>% filter(n > 1)
 summary(dup$n)
@@ -82,10 +83,10 @@ filter(sale, is.na(cust_id)) %>% distinct(cust_id_raw)
 sale <- sale %>%
     mutate(cust_id = ifelse(is.na(cust_id), cust_id_raw, cust_id))
 
-# remove dups from customer table
+# remove duplicates from the customer table
 cust <- filter(cust, cust_id == cust_id_raw) # drop dups
 
-# check
+# check: ensure correct deduplication
 select(cust, dob, last3, first2) %>% check_dups() # ensure this is zero
 filter(sale, is.na(cust_id)) # should be zero rows
 

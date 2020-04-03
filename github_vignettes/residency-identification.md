@@ -1,19 +1,25 @@
 
 # Residency Identification
 
-Overview: preference for state-supplied transaction-level residency, but we might need to create our own based on `lic$lic_res` and `cust$cust_res`
+State residency (in-state, out-of-state) is a customer variable that may change over time. For this reason, it is stored in the sale table of the production database. Agencies may provide a transaction-specific residency variable, in which case no identification is needed on our part. If not, the workflow below should be used to identify residency.
 
 ## Prioritization
 
+A 3-step residency identification process is usually sufficient to reach near 100% identification for residency. Because residency is often license-type-specific, priority is given to that variable in identifying residency. When not available, we can rely upon other transactions by the same customer or the customer address.
+
+### Steps
+
 1. Residency of the license type (when specified)
-2.
-3.
+2. Other purchases by the same customer (for those customers with known residency)
+3. Customer residency variable (usually based on a `state` variable)
 
-## Example Code
+### Example Code
 
-Using functions from package `salicprep`:
+Three functions from package `salicprep` have been included to make it easy to identify residency with the above prioritization. This is intended to be performed in the "05-final.R" step which builds the production database.
 
 ```r
+# identify residency
+# -  if not provided by state at the transaction level
 sale <- res_id_type(sale, lic)
 sale <- res_id_other(sale) # this can take some time to run
 sale <- res_id_cust(sale, cust)
