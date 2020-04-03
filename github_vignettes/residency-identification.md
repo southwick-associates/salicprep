@@ -3,6 +3,12 @@
 
 Overview: preference for state-supplied transaction-level residency, but we might need to create our own based on `lic$lic_res` and `cust$cust_res`
 
+## Prioritization
+
+1. Residency of the license type (when specified)
+2.
+3.
+
 ## Example Code
 
 Using functions from package `salicprep`:

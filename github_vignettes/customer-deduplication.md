@@ -5,7 +5,9 @@ State agencies include customer IDs for tracking customers over time, but their 
 
 ## Duplicate Checking Method
 
-Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letters of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Package](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
+Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letters of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Software](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
+
+*If address is available, you could use Bulk Mailer to get a unique location identifier (zip4dp) to reduce false positives in deduplication.*
 
 ## Choosing Whether to Deduplicate
 
@@ -13,7 +15,7 @@ Deduplication inherently involves a tradeoff of [false positives vs. false negat
 
 ### Rule of Thumb
 
-With dashboards, I've generally chosen a conservative approach in which we stick with the state-provided customer ID unless our estimated deduplication rate is above 4-5% or so (and then only deduplicate with agency permission). This percentage threshold is somewhat arbitrary, but deduplication involves a fair amount of work, and it's difficult to know for sure whether our new customer ID provides more accurate estimates of participants/churn/etc than the state-supplied customer ID. Hence, I've erred on the side of caution with deduplication.
+With dashboards, I've generally chosen a conservative approach in which we stick with the state-provided customer ID unless our estimated deduplication rate is above 4-5% or so (and then only deduplicate with agency permission). This percentage threshold is somewhat arbitrary, but deduplication involves a fair amount of work, and it's difficult to know for sure whether our new customer ID leads to more accurate estimates (of participants, churn, etc.) than the state-supplied customer ID. Hence, I've erred on the side of caution with deduplication.
 
 ## Deduplication Code Example
 
@@ -25,7 +27,20 @@ If you do need to deduplicate, you can access functions in salic and salicprep t
 
 Code for a given state may diverge somewhat from that shown below, but this should provide a good starting point.
 
+### 05-finalize.R
+
+Deduplication could be performed in the script that produces production data (i.e., deduplication is performed after the standardization step).
+
 ```r
+library(tidyverse)
+library(salic)
+library(salicprep)
+
+### A. Load Data
+# - you would first need to load data from SQLite
+
+### B. Deduplicate Customers
+
 # check: exact dups?
 nrow(cust)
 nrow(cust) == length(unique(cust$cust_id))
@@ -73,6 +88,8 @@ cust <- filter(cust, cust_id == cust_id_raw) # drop dups
 # check
 select(cust, dob, last3, first2) %>% check_dups() # ensure this is zero
 filter(sale, is.na(cust_id)) # should be zero rows
+
+### C. Finish Standardization & Write to SQLite
 ```
 
 ## False Negatives vs False Positives
