@@ -16,7 +16,7 @@ Written for national/regional dashboards, although potentially relevant for othe
     + [Customer Deduplication](github_vignettes/customer-deduplication.md)
     + [Residency Identification](github_vignettes/residency-identification.md)
     + [License History & Summary Data](github_vignettes/history-summary.md)
-- TODO: [Dashboard Management](github_vignettes/dashboard-management.md)
+- [Dashboard Management](github_vignettes/dashboard-management.md)
 
 ## Installation
 

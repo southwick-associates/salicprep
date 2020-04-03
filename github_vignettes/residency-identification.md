@@ -17,6 +17,8 @@ A 3-step residency identification process is usually sufficient to reach near 10
 
 Three functions from package `salicprep` have been included to make it easy to identify residency with the above prioritization. This is intended to be performed in the `05-final.R` script which builds the production database.
 
+#### 05-finalize.R
+
 ```r
 # identify residency
 # -  if not provided by state at the transaction level

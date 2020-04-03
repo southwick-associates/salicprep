@@ -109,7 +109,7 @@ The combination of raw_cust_id and cust_period should uniquely identify each row
 | sale_period | [period] | | | char | for use when data updates are needed | composite key |
 | cust_id | | | | | int |  | 
 | lic_id | | | | | int | | 
-| year | license/privilege calendar year | yyyy | | | int | | 
+| year | calendar year of sale | yyyy | | | int | | 
 | dot | transaction (purchase) date | yyyy-mm-dd | | | char | | 
 | start_date | when license becomes effective | yyyy-mm-dd | | | char | | 
 | end_date | when license expires | yyyy-mm-dd | | | char | | 

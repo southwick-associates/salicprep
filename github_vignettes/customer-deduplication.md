@@ -25,11 +25,9 @@ If you do need to deduplicate, you can access functions in salic and salicprep t
 2. Identifies and Removes duplicates
 3. Runs final deduplication checks
 
-Code for a given state may diverge somewhat from that shown below, but this should provide a good starting point.
+Code for a given state may diverge somewhat from that shown below, but this should provide a good starting point. Deduplication is to be performed in the script that produces production data (i.e., deduplication is performed after the standardization step).
 
-### 05-finalize.R
-
-Deduplication could be performed in the script that produces production data (i.e., deduplication is performed after the standardization step).
+#### 05-finalize.R
 
 ```r
 library(tidyverse)
