@@ -3,13 +3,13 @@
 
 This document details the rules for storing data in a standardized format using [SQLite](https://db.rstudio.com/databases/sqlite/) databases. The file paths below refer to locations on the Data Server under `E:/SA/`. Occurences of `[state]` refer to 2-letter abbreviations and `[period]` refer to the most recent time period in year-quarter covered for a data pull (e.g., "2019-q2", "2019-q4", etc.).
 
-## Overview
+### Contents
 
-Each data pull from a state agency is to be processed through three steps:
+Each data pull from a state agency is to be processed through three steps, each stored in a unique database:
 
-- [Raw](#raw-data): Data from the state is saved largely as-is into a database: `./Data-sensitive/[state]/raw-[period].sqlite3`
-- [Standard](#standard-data): An intermediate database is built to facilitate subsequent validation and deduplication (if needed): `./Data-sensitive/[state]/standard.sqlite3`
-- [Production](#production-data): A final database is built that contains only those fields necessary for dashboard production:  `./Data-production/[state]/license.sqlite3`
+1. [Raw](#raw-data): `./Data-sensitive/[state]/raw-[period].sqlite3`
+2. [Standard](#standard-data): `./Data-sensitive/[state]/standard.sqlite3`
+3. [Production](#production-data): `./Data-production/[state]/license.sqlite3`
 
 ## Production Data
 
