@@ -67,10 +67,18 @@ Standardized data rules can be checked with a function: `salicprep::data_check_s
 
 ### 3-Prep License Type Categories
 
-The license type table from the state may require some manual editing. We will need to create a "type" variable which provides logic for identifying hunters and anglers based on license purchases:
+The license type table from the state may require some manual editing. We will need to create two variables (type, duration).
+
+#### Type
+
+The "type" variable provides logic for identifying hunters and anglers based on license purchases:
 
 - An angler is anyone who buys a license with `lic$type` "fish" or "combo" in a given year.
 - An hunter is anyone who buys a license with `lic$type` "hunt" or "combo" in a given year.
+
+#### Duration
+
+The "duration" variable is used to identify multi-year or lifetime licenses. Lifetimes are given the value of 99, multi-years are given values according to their duration (e.g., 3-year = 3), and all others are given the value of 1.
 
 ### 4-Initial Validation
 
