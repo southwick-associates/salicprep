@@ -26,13 +26,12 @@ If you do need to deduplicate, you can access functions in salic and salicprep t
 Code for a given state may diverge somewhat from that shown below, but this should provide a good starting point.
 
 ```r
-# check: exact dups? (nope)
+# check: exact dups?
 nrow(cust)
 nrow(cust) == length(unique(cust$cust_id))
 nrow(cust) == distinct(cust, cust_id, sex, dob, last, first, state, cust_res) %>% nrow()
 
-# check: one customer for multiple cust_ids? (yes)
-# - this is a fairly high apparent duplication rate
+# check: one customer for multiple cust_ids?
 select(cust, dob, last, first) %>% check_dups()
 dup <- count(cust, first, last, dob) %>% filter(n > 1)
 summary(dup$n)
@@ -47,9 +46,12 @@ summary(dup$n)
 
 # identify duplicates: using dob, last3, first2
 cust <- cust_dup_identify(cust, dob, last3, first2)
+
+# save a duplicate relation table (for future reference)
+# - enables downstream linking of deduplicated customers with original IDs
 cust_dup <- cust_dup_pull(cust)
 
-# - summarize duplication
+# check: summarize duplication
 cust_dup_pct(cust, cust_dup)
 cust_dup_demo(cust, cust_dup) %>% cust_dup_demo_plot()
 cust_dup_year(cust, cust_dup, sale)
@@ -79,12 +81,12 @@ There is an inherent tradeoff if we choose to deduplicate records. If we estimat
 
 ### Record Linkage
 
-Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge/). As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
+Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge). As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
 
-<img src="img/dedup1.png" height="350">
+<img src="img/dedup1.png" height="300">
 
 ### Theoretical Optimum
 
 In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample.
 
-<img src="img/dedup2.png" height="350">
+<img src="img/dedup2.png" height="300">
