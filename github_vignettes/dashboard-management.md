@@ -7,6 +7,10 @@ This document is intended as a portal for dashboard analysis management. It cove
 
 Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Relevant documentation is stored in that repository.
 
+### State-supplied Summary Data
+
+Certain states will send summarized data (of dashboard metrics) rather than sensitive license data. This will require validation on our part, and likely editing in certain cases (and back-and-forth with agency folks to resolve questions). I will be creating a template workflow for processing these summary data.
+
 ### Archived Documentation
 
 The dashboard documentation was originally stored in [Office 365 >> Data Dashboards >> _Analyst Docs](https://southwickassociatesinc.sharepoint.com/:f:/s/datadashboards/EqI3PX-tnbtBreBfPa-87-UBwcYlg5k34CKuHMcY5dj9nw?e=uOBtDI) These documents are primarily focused on individual state dashboards, and are linked here for future reference. The Github documentation was written as a replacement for the O365 documentation.
