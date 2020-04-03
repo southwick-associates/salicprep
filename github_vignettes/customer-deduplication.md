@@ -87,4 +87,4 @@ Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Rec
 
 In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample.
 
-<img src="img/dedup2.png" width="48">
+<img src="img/dedup2.png" height="200">
