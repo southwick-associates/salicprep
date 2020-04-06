@@ -32,3 +32,12 @@ Individual state summary data is produced by dashboard analysts, but a final agg
 3. Combine all geographic levels (individual states, regions, US) into a single table for Tableau import
 
 This workflow is stored on the server: `E:/SA/Projects/Data-Dashboards/_Regional/`
+
+#### US Census Data
+
+A population database is stored on the server, intended to be updated periodically (e.g., once per year): `E:/SA/Projects/Data-Dashboards/_Shared/`
+
+The data is accessed from two primary sources:
+
+- ACS county-level estimates: accessed via [package acs](https://cran.r-project.org/web/packages/acs/index.html)
+- Census state-level estimates: https://www2.census.gov/programs-surveys/popest
