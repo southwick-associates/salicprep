@@ -22,7 +22,7 @@ Written for national/regional dashboards, although potentially relevant for othe
 
 From the R console:
 
-``` r
+```r
 install.packages("remotes")
 remotes::install_github("southwick-associates/salicprep")
 ```
