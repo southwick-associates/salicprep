@@ -3,7 +3,7 @@
 
 State agencies include customer IDs for tracking customers over time, but their ability to connect purchases by people to specific IDs is imperfect. Agencies have improved in this capability over time, and we would prefer not to deduplicate, but it may be necessary if we detect a high enough estimated duplication rate.
 
-## Duplicate Checking Method
+### Duplicate Checking Method
 
 Through past experience, Southwick analysts have generally agreed on a convention of using exact matches of date of birth and partial names (first 2 letters of first name, first 3 letters of last name) rather than a more generalized (but time consuming) fuzzy-matching algorithm or [Record Linkage Software](https://journal.r-project.org/archive/2010/RJ-2010-017/RJ-2010-017.pdf). 
 
@@ -93,11 +93,11 @@ filter(sale, is.na(cust_id)) # should be zero rows
 
 ## False Negatives vs False Positives
 
-There is an inherent tradeoff if we choose to deduplicate records. If we estimate a high duplication rate in the state-provided customer ID, then we may have a situation in which the state's customer linkage has a high level of false negatives compared to false negatives. This might suggest to us that we could improve the customer linkage, but we need to be aware that any deduplication we pursue will produce both types of false identification. 
+There is an inherent tradeoff if we choose to deduplicate records. If we estimate a high duplication rate in the state-provided customer ID, then we may have a situation in which the state's customer linkage has a high level of false negatives compared to false positives. This might suggest that we could improve the customer linkage, but we need to be aware that any deduplication we pursue will produce both types of false identification. 
 
 ### Record Linkage
 
-Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge). As the deduplication method becomes more aggressive at identifying duplicates, the number of false negatives decreases but the number of false positives increases. 
+Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Record_linkage) problem. In theory, the false negative/positve tradeoff could be represented by the relationships below, where the `max.distance` parameter represents an argument to a function that links records (i.e., identifies duplicates) more aggresively as it increases (e.g., the `agrep()` function in R which I once used for deduplication in a project on the server: E:/SA/Projects/ASA/ASA-19-04 Retailer List Merge). As the algorithm becomes more aggressive in linking records, the number of false negatives decreases but the number of false positives increases. 
 
 #### Tradeoff of False Negatives/Positives
 
