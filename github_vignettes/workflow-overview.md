@@ -1,8 +1,21 @@
 
 # Workflow Overview
 
-This document outlines the workflow for preparing license data (particularly for dashboards). It's an R-based workflow that utilizes custom R packages developed by Southwick ([salic](https://southwick-associates.github.io/salic/), [salicprep](https://github.com/southwick-associates/salicprep), [lictemplate](https://github.com/southwick-associates/lictemplate), [dashtemplate](https://github.com/southwick-associates/dashboard-template),
-[workflow](https://github.com/southwick-associates/workflow)). The analysis is intended to be performed using the Southwick Data Server, which keeps all sensitive data confined to a single location. See [Data Server Setup & Rules](server-setup.md) for more information about the server.
+This document outlines the workflow for preparing license data (particularly for dashboards). The analysis is performed using the Southwick Data Server, which keeps all sensitive data confined to a single location. See [Data Server Setup & Rules](server-setup.md) for more information.
+
+### R packages
+
+This document outlines an R-based workflow that relies heavily on custom R packages developed by Southwick:
+
+- [lictemplate](https://github.com/southwick-associates/lictemplate) to provide template workflows
+- [salicprep](https://github.com/southwick-associates/salicprep) to process license data
+- [salic](https://southwick-associates.github.io/salic/) and [dashtemplate](https://github.com/southwick-associates/dashboard-template) to produce dashboard summary data
+- [workflow](https://github.com/southwick-associates/workflow) to automate code execution
+
+Two additional packages provide functionality that will only be used by specific analysts:
+
+- [sadash](https://github.com/southwick-associates/sadash) for preparing individual state dashboards
+- [sadashreg](https://github.com/southwick-associates/sadashreg) for validating and aggregating summary data into one national/regional dashboard
 
 ## Server Resources
 
