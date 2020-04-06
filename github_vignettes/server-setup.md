@@ -55,8 +55,57 @@ When the RD window is active, the user's keyboard and mouse function as though t
 
 ### Mac Setup
 
-For Mark to add.
+Access to the server requires an PPTP VPN on Mac (i.e. macOS Catalina, Mojave, High Sierra, Sierra) and installment Microsoft Remote Desktop from the Apple app store. 
 
 #### VPN
 
+Mac OS 10.12 (and greater) have removed PPTP connection from built-in VPN clients. Supported Mac protocols (i.e. IKEv2, Cisco IPSec, and L2TP over IPSec) cannot access the Southwick VPN. We can set up a PPTP connection by using the command line. 
+
+You can create a .txt file (e.g. called vpn.txt) file and paste the following commands as such:
+
+``` 
+plugin PPTP.ppp
+noauth
+remoteaddress "------VPN IP address------"
+user "------VPN username------"
+password "------VPN password------"
+redialcount 1
+redialtimer 5
+idle 1800
+# mru 1368
+# mtu 1368
+receive-all
+novj 0:0
+ipcp-accept-local
+ipcp-accept-remote
+refuse-eap
+refuse-pap
+refuse-chap-md5
+hide-password
+mppe-stateless
+mppe-128
+# require-mppe-128
+looplocal
+nodetach
+ms-dns 8.8.8.8
+usepeerdns
+# ipparam gwvpn
+defaultroute
+debug
+```
+
+Save the file. Then, in terminal app, execute the commands in the file with a PPTP.ppp function build into the Mac:
+
+```
+sudo pppd file ~/path-to-your-file/vpn.txt
+```
+
+To disable the VPN process:
+
+```
+killall pppd
+```
+
 #### Remote Desktop
+
+Accessing the remote PC desktop requires installing Microsoft Remote Desktop 10 from the Apple App Store. Once opened (and with VPN connection), you can then manually select "Add PC". Here you type in the IP address, set up your user account, and select "No Gateways" in the General option section. When saved, you should have an active RD window.
