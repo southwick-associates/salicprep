@@ -3,7 +3,7 @@
 
 Once license data is stored in a standardized format, several functions can be applied in sequence to build the necessary summary data. The Southwick package `dashtemplate`  (installable from the Data Server: E:/SA/Projects/R-Software/Southwick-packages/build_binary/dashtemplate_0.1.zip) includes the relevant functions. The workflow has been documented in a github repo,  [dashboard-template](https://github.com/southwick-associates/dashboard-template), for sharing with state agency folks who choose to produce their own summary data.
 
-The [sadashreg package]() includes functions for validating and organizing the summary data that we receive from states.
+The [sadashreg](https://github.com/southwick-associates/sadashreg) package includes functions for validating and organizing the summary data that we receive from states.
 
 ### Workflow Documentation
 
