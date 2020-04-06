@@ -105,7 +105,9 @@ Deduplication is inherently a [record linkage](https://en.wikipedia.org/wiki/Rec
 
 ### Theoretical Optimum
 
-In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample.
+In theory, we could identify an ideal `max.distance` value that produces the least number of false linkages. In practice, this would be quite laborious, although you could start to get a sense by taking samples over a range of `max.distance` values and visually inspecting the results to count false negatives/positives in each sample. 
+
+This sort of investigation was performed several years ago in arriving at the exact matching approach. We assessed the tradeoff in false positives/negatives for varying lengths of partial names, determining that last3 and first2 provided a decent balance (although, the accuracy of this matching could certainly be improved by using a better model). It may be worth an investigation of alternative solutions in the future (e.g., R/Python packages, stand-alone applications, etc.).
 
 #### Minimizing False Linkages
 
