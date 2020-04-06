@@ -9,7 +9,7 @@ Note that [package sadash](https://github.com/southwick-associates/sadash) was w
 
 ### State-supplied Summary Data
 
-Certain states will send summarized data (of dashboard metrics) rather than sensitive license data. This will require validation on our part, and likely editing in certain cases (and back-and-forth with agency folks to resolve questions). I will be creating a template workflow for processing these summary data.
+Certain states will send summarized data (of dashboard metrics) rather than sensitive license data. This will require validation on our part, and likely editing in certain cases (and back-and-forth with agency folks to resolve questions). A template workflow is available via [lictemplate](https://github.com/southwick-associates/lictemplate).
 
 ### Archived Documentation
 
@@ -31,7 +31,7 @@ Individual state summary data is produced by dashboard analysts, but a final agg
 2. Produce averaged metrics for regions and the nation as a whole
 3. Combine all geographic levels (individual states, regions, US) into a single table for Tableau import
 
-This workflow is stored on the server: `E:/SA/Projects/Data-Dashboards/_Regional/`
+This workflow is stored on the server: `E:/SA/Projects/Data-Dashboards/_Regional/` and makes use of [package sadashreg](https://github.com/southwick-associates/sadashreg).
 
 #### US Census Data
 
