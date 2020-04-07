@@ -1,7 +1,7 @@
 
 # License History & Summary Data
 
-Once license data is stored in a standardized format, several functions can be applied in sequence to build the necessary summary data. The Southwick package `dashtemplate`  (installable from the Data Server: E:/SA/Projects/R-Software/Southwick-packages/build_binary/dashtemplate_0.1.zip) includes the relevant functions. The workflow has been documented in a github repo,  [dashboard-template](https://github.com/southwick-associates/dashboard-template), for sharing with state agency folks who choose to produce their own summary data.
+Once license data is stored in a standardized format, several functions can be applied in sequence to build the necessary summary data. The Southwick package `dashtemplate`  (installable from the Data Server: E:/SA/Projects/R-Software/Southwick-packages/build_binary/dashtemplate_0.1.zip) includes the relevant functions. The workflow has been documented in a Github repo ([dashboard-template](https://github.com/southwick-associates/dashboard-template)) for sharing with state agency folks who choose to produce their own summary data. The package isn't installable from the Github repo because the corresponding DESCRIPTION, etc., aren't tracked there (i.e., only included on the Data Server).
 
 ### Summary Data States
 
