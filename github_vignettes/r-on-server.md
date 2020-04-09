@@ -8,6 +8,7 @@ R and Rstudio are available on the server for all Remote Desktop users. Rstudio 
 - [Usage](#usage)
 - [Installation Customization](#installation-customization)
 - [Reinstalling/Updating R](#reinstalling-and-updating-r)
+- TODO: [Fatal Error Troubleshooting](#fatal-error-troubleshooting)
 
 ## Usage
 
@@ -109,3 +110,31 @@ It's possible that something could go wrong with the R installation, and you'll 
 ### Updating
 
 Similar to reinstalling, but no deletion is required. Simply point to `E:/Program Files/R/` during install and the new version should be placed alongside existing R versions. Then copy over the site files from the previous version.
+
+## Fatal Error Troubleshooting
+
+The Data Server R install may have an issue in which the system library gets deleted (not sure why). More info and guidelines for fixing the issue are included below.
+
+### The Error
+
+You may see this error when trying to use R:
+
+![](img/R-install-issues/error.png)
+
+### The Problem
+
+System libraries get deleted for some reason:
+
+![](img/R-install-issues/deleted-system.png)
+
+### The Fix
+
+Reinstall R on **E drive** by double-clicking the installation exe, accepting defaults **EXCEPT** the file path (which defaults to C):
+
+![](img/R-install-issues/R-exe.png)
+
+![](img/R-install-issues/install-location.png)
+
+It's okay to click on "Yes" here. Then you can just click through the other defaults.
+
+![](img/R-install-issues/overwrite-warning.png)
