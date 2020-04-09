@@ -8,7 +8,7 @@ R and Rstudio are available on the server for all Remote Desktop users. Rstudio 
 - [Usage](#usage)
 - [Installation Customization](#installation-customization)
 - [Reinstalling/Updating R](#reinstalling-and-updating-r)
-- TODO: [Fatal Error Troubleshooting](#fatal-error-troubleshooting)
+- [Fatal Error Troubleshooting](#fatal-error-troubleshooting)
 
 ## Usage
 
@@ -129,12 +129,12 @@ System libraries get deleted for some reason:
 
 ### The Fix
 
-Reinstall R on **E drive** by double-clicking the installation exe, accepting defaults **EXCEPT** the file path (which defaults to C):
+Reinstall R on the **E drive** by double-clicking the installation exe, accepting defaults **EXCEPT** the file path (which defaults to C):
 
 ![](img/R-install-issues/R-exe.png)
 
 ![](img/R-install-issues/install-location.png)
 
-It's okay to click on "Yes" here. Then you can just click through the other defaults.
+It's okay to click on "Yes" to install to the existing folder. Then you can just click through the other defaults.
 
 ![](img/R-install-issues/overwrite-warning.png)
