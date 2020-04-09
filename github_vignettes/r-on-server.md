@@ -135,6 +135,6 @@ Reinstall R on the **E drive** by double-clicking the installation exe, acceptin
 
 ![](img/R-install-issues/install-location.png)
 
-It's okay to click on "Yes" to install to the existing folder. Then you can just click through the other defaults.
+It's okay to click on "Yes" to install to the existing folder (`Rprofile.site` and `Renviron.site` should be preserved). Then you can just click through the other defaults.
 
 ![](img/R-install-issues/overwrite-warning.png)
