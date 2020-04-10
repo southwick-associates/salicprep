@@ -3,6 +3,13 @@
 
 This document is intended as a portal for dashboard analysis management. It covers a number of topics that go beyond what is needed for analysts producing dashboard summary data for individual states as part of the national/regional dashboard project.
 
+- [Individual State Dashboards](#individual-state-dashboards)
+- [State-supplied Summary Data](#state-supplied-summary-data)
+- [Archived Documentation](#archived-documentation)
+- [State Agency Communication](#state-agency-communication)
+- [Combining States](#combining-states)
+- [US Census Data](#us-census-data)
+
 ### Individual State Dashboards
 
 Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Workflow documentation is stored in that repository. Tableau deliverables and state-shared documentation is stored on [Office 365 >> Data Dashboards](https://southwickassociatesinc.sharepoint.com/sites/datadashboards/Shared%20Documents/Forms/AllItems.aspx).
@@ -33,7 +40,7 @@ Individual state summary data is produced by dashboard analysts, but a final agg
 
 This workflow is stored on the server: `E:/SA/Projects/Data-Dashboards/_Regional/` and makes use of [package sadashreg](https://github.com/southwick-associates/sadashreg).
 
-#### US Census Data
+### US Census Data
 
 A population database is stored on the server, intended to be updated periodically (e.g., once per year): `E:/SA/Projects/Data-Dashboards/_Shared/`
 
