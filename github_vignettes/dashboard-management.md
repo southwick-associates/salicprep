@@ -9,7 +9,7 @@ Note that [package sadash](https://github.com/southwick-associates/sadash) was w
 
 ### State-supplied Summary Data
 
-Certain states will send summarized data (of dashboard metrics) rather than sensitive license data. This will require validation on our part, and likely editing in certain cases (and back-and-forth with agency folks to resolve questions). A template workflow is available via [lictemplate](https://github.com/southwick-associates/lictemplate).
+Certain states will send summarized data (of dashboard metrics) rather than sensitive license data (see [License History & Summary Data](https://github.com/southwick-associates/salicprep/blob/master/github_vignettes/history-summary.md). This will require validation on our part, and likely editing in certain cases (and back-and-forth with agency folks to resolve questions). A template workflow is available via [lictemplate](https://github.com/southwick-associates/lictemplate).
 
 ### Archived Documentation
 
