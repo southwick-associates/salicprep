@@ -5,7 +5,7 @@ This document is intended as a portal for dashboard analysis management. It cove
 
 ### Individual State Dashboards
 
-Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Relevant documentation is stored in that repository.
+Note that [package sadash](https://github.com/southwick-associates/sadash) was written for processing the more-involved individual state dashboards. Workflow documentation is stored in that repository. Tableau deliverables and state-shared documentation is stored on [Office 365 >> Data Dashboards](https://southwickassociatesinc.sharepoint.com/sites/datadashboards/Shared%20Documents/Forms/AllItems.aspx).
 
 ### State-supplied Summary Data
 
