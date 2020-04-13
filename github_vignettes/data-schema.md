@@ -43,7 +43,7 @@ The lic table corresponds to unique license types. The lic_id field should uniqu
 | description | generic description for each lic_id | | | char | provided by state | |
 | type | overall license type | fish, hunt, combo | | char | created by SA (note that "combo" refers to a license that provides both a hunting and fishing privilege) | |
 | duration | how many years the license/permit lasts | 1, 2, ..., 99 | 1=1yr/short-term, 2=2yr, ..., 99=lifetime| int | necessary where multi-year/lifetime licenses are present | |
-| lic_res | in-state residency for residency-specific licenses | 1, 0, NA | 1=Res, 0=Nonres | int | | |
+| lic_res | in-state residency for residency-specific licenses | 1, 0, NA | 1=Res, 0=Nonres | int | only needed if the agency didn't provide transaction-level residency | |
 | raw_lic_id | ID for linking to raw data | | | int | row number from raw data | |
 | lic_period | [period] | | | char | time period of data pull | |
 
@@ -56,7 +56,7 @@ The cust table corresponds to unique customers.
 | cust_id | unique customer ID | | | int | | primary key |
 | sex | | 1, 2, NA | 1=Male, 2=Female | int | | |
 | birth_year | | yyyy | | int | | |
-| cust_res | customer state residency | 1, 0, NA | 1=Res, 0=Nonres | int | | |
+| cust_res | customer state residency | 1, 0, NA | 1=Res, 0=Nonres | int | only needed if the agency didn't provide transaction-level residency  | |
 | raw_cust_id | ID for linking to raw data | | | int | | |
 | cust_period | [period] | | | char | for use when data updates are needed | |
 
