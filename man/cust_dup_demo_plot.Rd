@@ -16,6 +16,7 @@ Plot results of cust_dup_demo()
 Other finalize production data: 
 \code{\link{cust_dup_demo}()},
 \code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_nomissing}()},
 \code{\link{cust_dup_pct}()},
 \code{\link{cust_dup_pull}()},
 \code{\link{cust_dup_year}()},

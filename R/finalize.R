@@ -9,11 +9,6 @@
 #' in cust_id_raw. For every customer in which a duplicate(s) is found, the row 
 #' with the lowest customer ID is used for the output cust_id.
 #' 
-#' We could (in theory) implement better customer deduplication using fuzzy 
-#' matching. This would be more computationally difficult though; would need to 
-#' limit the potential matches using a preprocessing step. Might also be overkill
-#' for our needs here.
-#' 
 #' @param cust input customer table
 #' @param ... set of variables to be used for deduplication
 #' @family finalize production data
@@ -29,6 +24,38 @@ cust_dup_identify <- function(cust, ...) {
     cust %>%
         rename(cust_id_raw = .data$cust_id) %>%
         left_join(dedup)
+}
+
+#' Set cust_id to cust_id_raw where there are missing values in select variables
+#' 
+#' This prevents a situation in which multiple customers with missing values (e.g.,
+#' in names) are identified as the same customer. To be run following
+#' \code{\link{cust_dup_identify}}
+#' 
+#' @param cust input customer table
+#' @param vars variables to look for missing values
+#' @family finalize production data
+#' @export
+cust_dup_nomissing <- function(cust, vars) {
+    # summary before: customers per row
+    before <- length(unique(cust$cust_id))
+    
+    for (i in vars) {
+        cust <- cust %>% mutate(
+            cust_id = ifelse(is.na(.data[[i]]), .data$cust_id_raw, .data$cust_id)
+        )
+    }
+    # summary after: customers per row
+    after <- length(unique(cust$cust_id))
+    cat("The nomissing correction reduces unique customer IDs:\n")
+    tibble::tribble(
+        ~Group, ~`Unique customer IDs`,
+        "Before Correction", before,
+        "Afer Correction", after,
+        "Difference", after - before
+    ) %>% print()
+    
+    cust
 }
 
 #' Pull customer records where duplicates were found

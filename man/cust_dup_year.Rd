@@ -29,6 +29,7 @@ Other finalize production data:
 \code{\link{cust_dup_demo_plot}()},
 \code{\link{cust_dup_demo}()},
 \code{\link{cust_dup_identify}()},
+\code{\link{cust_dup_nomissing}()},
 \code{\link{cust_dup_pct}()},
 \code{\link{cust_dup_pull}()},
 \code{\link{res_id}}

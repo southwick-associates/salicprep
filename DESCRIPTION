@@ -1,6 +1,6 @@
 Package: salicprep
 Title: Prepare Agency Data
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: c(
     person("Dan", "Kary", , "Rsoftware@SouthwickAssociates.com", role = c("aut", "cre")),
     person("Southwick Associates", role = c("cph", "fnd"))
@@ -17,6 +17,7 @@ Imports:
     lubridate,
     salic (>= 2.0.2),
     scales,
+    tibble,
     tidyr
 Remotes:
     southwick-associates/salic

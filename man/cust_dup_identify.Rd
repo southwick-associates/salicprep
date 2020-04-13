@@ -17,16 +17,11 @@ function changes cust_id to a deduped version and stores the original value
 in cust_id_raw. For every customer in which a duplicate(s) is found, the row 
 with the lowest customer ID is used for the output cust_id.
 }
-\details{
-We could (in theory) implement better customer deduplication using fuzzy 
-matching. This would be more computationally difficult though; would need to 
-limit the potential matches using a preprocessing step. Might also be overkill
-for our needs here.
-}
 \seealso{
 Other finalize production data: 
 \code{\link{cust_dup_demo_plot}()},
 \code{\link{cust_dup_demo}()},
+\code{\link{cust_dup_nomissing}()},
 \code{\link{cust_dup_pct}()},
 \code{\link{cust_dup_pull}()},
 \code{\link{cust_dup_year}()},
