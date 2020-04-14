@@ -50,6 +50,8 @@ A small amount of customization to the startup behavior is provided using two si
 
 #### Rprofile.site
 
+The primary purpose of `Rprofile.site` is to ensure every user has their own package library for installing packages (thereby protecting the system library from accidental installs).
+
 ```r
 # Defines some Southwick server setup
 
@@ -83,6 +85,8 @@ cat(paste0(
 ```
 
 #### Renviron.site
+
+A few environmental variables are defined in `Renviron.site`:
 
 ```r
 # Southwick Environmental Variables
