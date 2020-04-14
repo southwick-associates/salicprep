@@ -61,9 +61,24 @@ summary(dup$n)
 # identify duplicates: using dob, last3, first2
 cust <- cust_dup_identify(cust, dob, last3, first2)
 
+# check: issues with missing values
+# - missing values can cause problems by increasing false positives
+filter(cust, is.na(last3) | is.na(first2) | is.na(dob))
+
+# correct issues with missing values
+# - we should only deduplicate records with complete DOB/name data
+cust <- cust_dup_nomissing(cust, c("dob", "last3", "first2"))
+
+# check: old customers per new customers, distribution
+# - these typically should mostly be n=1 (no duplicates) or n=2 (one duplicate)
+count(cust, cust_id) %>% count(n)
+
 # save a duplicate relation table (for future reference)
 # - enables downstream linking of deduplicated customers with original IDs
 cust_dup <- cust_dup_pull(cust)
+
+# check: a sample of duplicate customers and their sales
+cust_dup_samp(cust_dup, sale) %>% knitr::kable()
 
 # check: summarize duplication
 cust_dup_pct(cust, cust_dup)
