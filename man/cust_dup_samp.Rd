@@ -8,7 +8,7 @@ cust_dup_samp(
   cust_dup,
   sale,
   samp_size = 10,
-  vars = c("cust_id", "cust_id_raw", "year", "first", "last", "dob", "zip4dp")
+  vars = c("cust_id", "cust_id_raw", "sale_period", "first", "last", "dob", "zip4dp")
 )
 }
 \arguments{
