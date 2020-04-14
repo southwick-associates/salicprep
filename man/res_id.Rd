@@ -68,6 +68,7 @@ Other finalize production data:
 \code{\link{cust_dup_nomissing}()},
 \code{\link{cust_dup_pct}()},
 \code{\link{cust_dup_pull}()},
+\code{\link{cust_dup_samp}()},
 \code{\link{cust_dup_year}()}
 }
 \concept{finalize production data}

@@ -18,7 +18,8 @@ Imports:
     salic (>= 2.0.2),
     scales,
     tibble,
-    tidyr
+    tidyr,
+    tidyselect
 Remotes:
     southwick-associates/salic
 RoxygenNote: 7.1.0

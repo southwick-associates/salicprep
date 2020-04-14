@@ -75,6 +75,32 @@ cust_dup_pull <- function(cust) {
         semi_join(dup, by = "cust_id")
 }
 
+#' Pull a sample of duplicated customers and their sales
+#' 
+#' Only select variables are included, with a \code{\link[dplyr]{distinct}}
+#' operation run at the end.
+#' 
+#' @inheritParams cust_dup_pct
+#' @param sale data frame with uncorrected customer IDs
+#' @param samp_size number of customers to pull in sample
+#' @param vars variables to include in output
+#' @family finalize production data
+#' @export
+cust_dup_samp <- function(
+    cust_dup, sale, samp_size = 10,
+    vars = c("cust_id", "cust_id_raw", "year", "first", "last", "dob", "zip4dp")
+) {
+    dup_samp <- cust_dup %>%
+        distinct(.data$cust_id) %>% 
+        sample_n(samp_size)
+    dup_samp %>%
+        left_join(cust_dup, by = "cust_id") %>%
+        left_join(rename(sale, cust_id_raw = .data$cust_id), by = "cust_id_raw") %>%
+        select(tidyselect::any_of(vars)) %>%
+        distinct() %>%
+        data.frame()
+}
+
 #' Summarize percent of customers with extra rows in raw table
 #' 
 #' Percent of customers: (based on deduplicated count) with extra
