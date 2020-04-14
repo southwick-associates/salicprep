@@ -139,4 +139,4 @@ It's okay to click on "Yes" to install to the existing folder (`Rprofile.site` a
 
 ![](img/R-install-issues/overwrite-warning.png)
 
-2. Open `.etc/Rprofile-site` and overwrite with the [Rprofile.site](#Rprofile.site) code.
+2. Open `.etc/Rprofile-site` and overwrite with the [Rprofile.site](#rprofilesite) code.
