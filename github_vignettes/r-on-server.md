@@ -129,7 +129,7 @@ System libraries get deleted for some reason:
 
 ### The Fix
 
-Reinstall R on the **E drive** by double-clicking the installation exe, accepting defaults **EXCEPT** the file path (which defaults to C):
+1. Reinstall R on the **E drive** by double-clicking the installation exe, accepting defaults **EXCEPT** the file path (which defaults to C):
 
 ![](img/R-install-issues/R-exe.png)
 
@@ -138,3 +138,5 @@ Reinstall R on the **E drive** by double-clicking the installation exe, acceptin
 It's okay to click on "Yes" to install to the existing folder (`Rprofile.site` and `Renviron.site` should be preserved). Then you can just click through the other defaults.
 
 ![](img/R-install-issues/overwrite-warning.png)
+
+2. Open `.etc/Rprofile-site` and overwrite with the [Rprofile.site](#Rprofile.site) code.
