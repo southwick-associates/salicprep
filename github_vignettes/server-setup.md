@@ -55,6 +55,8 @@ When the RD window is active, the user's keyboard and mouse function as though t
 
 ### Mac Setup
 
+**Note**: The PPTP plugin approach below does not appear to work for macOS Catalina and later (see [article](https://vladtalks.tech/vpn/setup-pptp-vpn-on-mac)). You can get a 30-day trial for software called VPN Tracker, which worked for Dan in Oct, 2020. Then you connect using the Microsoft Remote Desktop outlined below.
+
 Access to the server requires an PPTP VPN on Mac (i.e. macOS Catalina, Mojave, High Sierra, Sierra) and installment Microsoft Remote Desktop from the Apple app store. 
 
 #### VPN
